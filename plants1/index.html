@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/style.css" />
     <title>Plants</title>
   </head>
   <body>
     <header class="header">
       <div class="wrapper">
-        <logo class="logo">Plants</logo>
+        <logo class="logo">
+          <img src="./src/img/logo_vector.svg" alt="logo" class="logo-img" />
+          <span>Plants</span>
+        </logo>
         <nav>
           <ul class="nav-list">
             <li class="nav-item">
@@ -35,9 +45,11 @@
     <main class="main">
       <section class="section-welcome" id="Welcome">
         <div class="wrapper">
-          <div class="section-welcome__img">
-            <img alt="leafs" />
-          </div>
+          <img
+            src="./src/img/leafs.png"
+            alt="leafs"
+            class="section-welcome__img"
+          />
           <div class="section-welcome__info"></div>
           <h1 class="section-welcome__title">
             We grow <span class="section-welcome__title_green">plants</span> and
@@ -72,12 +84,12 @@
                 electronic typesetting, remaining essentially unchanged.
               </p>
             </article>
-            <img alt="plants" />
+            <img src="./src/img/houseplant 1.png" alt="plants" />
           </div>
         </div>
       </section>
 
-      <section class="section-service" id="Service">
+      <section class="section-welcome" id="Service">
         <div class="wrapper">
           <div class="section-service__heading">
             <h2 class="section-service__heading-title">
@@ -89,49 +101,148 @@
               <button class="button">Planting</button>
             </div>
           </div>
-          <div class="layout-3-columns">
+          <div class="gallery">
             <div class="card">
-              <img src="" alt="photo" class="card__img" />
+              <img src="./src/img/item1.png" alt="photo" class="card__img" />
               <h4 class="card__title">Garden care</h4>
-              <p class="csrd__info">Lorem Ipsum has been the industry</p>
+              <p class="card__info">Lorem Ipsum has been the industry</p>
             </div>
             <div class="card">
-                <img src="" alt="photo" class="card__img" />
-                <h4 class="card__title">Garden care</h4>
-                <p class="csrd__info">Lorem Ipsum has been the industry</p>
-              </div>
-              <div class="card">
-                <img src="" alt="photo" class="card__img" />
-                <h4 class="card__title">Garden care</h4>
-                <p class="csrd__info">Lorem Ipsum has been the industry</p>
-              </div>
-              <div class="card">
-                <img src="" alt="photo" class="card__img" />
-                <h4 class="card__title">Garden care</h4>
-                <p class="csrd__info">Lorem Ipsum has been the industry</p>
-              </div>
-              <div class="card">
-                <img src="" alt="photo" class="card__img" />
-                <h4 class="card__title">Garden care</h4>
-                <p class="csrd__info">Lorem Ipsum has been the industry</p>
-              </div>
-              <div class="card">
-                <img src="" alt="photo" class="card__img" />
-                <h4 class="card__title">Garden care</h4>
-                <p class="csrd__info">Lorem Ipsum has been the industry</p>
-              </div>
+              <img src="./src/img/item2.png" alt="photo" class="card__img" />
+              <h4 class="card__title">Garden care</h4>
+              <p class="card__info">Lorem Ipsum has been the industry</p>
+            </div>
+            <div class="card">
+              <img src="./src/img/item3.png" alt="photo" class="card__img" />
+              <h4 class="card__title">Garden care</h4>
+              <p class="card__info">Lorem Ipsum has been the industry</p>
+            </div>
+            <div class="card">
+              <img src="./src/img/item4.png" alt="photo" class="card__img" />
+              <h4 class="card__title">Garden care</h4>
+              <p class="card__info">Lorem Ipsum has been the industry</p>
+            </div>
+            <div class="card">
+              <img src="./src/img/item5.png" alt="photo" class="card__img" />
+              <h4 class="card__title">Garden care</h4>
+              <p class="card__info">Lorem Ipsum has been the industry</p>
+            </div>
+            <div class="card">
+              <img src="./src/img/item6.png" alt="photo" class="card__img" />
+              <h4 class="card__title">Garden care</h4>
+              <p class="card__info">Lorem Ipsum has been the industry</p>
+            </div>
           </div>
         </div>
       </section>
-      <section class="section" id="Price">
-        <div class="wrapper"></div>
+
+      <section class="section-prices" id="Price">
+        <div class="wrapper">
+          <div class="layout-2-columns">
+            <div class="prices-column">
+              <h2 class="prices__column_title">Prices</h2>
+              <div class="prices__column_list">
+                <div class="prices__column_list-item">
+                  <h5 class="prices__column_list-item_title">Basics</h5>
+                  <div class="accordion__btn">
+                    <img src="" alt="" />
+                    <div class="accordion__btn_arrow">
+                      <img src="" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="prices__column_list-item">
+                  <h5 class="prices__column_list-item_title">Standart</h5>
+                  <div class="accordion__btn">
+                    <img src="" alt="" />
+                    <div class="accordion__btn_arrow">
+                      <img src="" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="prices__column_list-item">
+                  <h5 class="prices__column_list-item_title">Pro Care</h5>
+                  <div class="accordion__btn">
+                    <img src="" alt="" />
+                    <div class="accordion__btn_arrow">
+                      <img src="" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="context-column">
+              <h3 class="prices__column_title">
+                Our best
+                <span class="prices__column_title-green">gardeners</span> are
+                ready to help you
+              </h3>
+              <button class="button">Contact us</button>
+              <div class="prices__column_img">
+                <img src="./src/img/leafs-small.png" alt="leafs" />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
       <section class="section" id="Contacts">
-        <div class="wrapper"></div>
+        <div class="wrapper">
+          <div class="section-contacts__img">
+            <img src="./src/img/contact_woman 1.png" alt="woman image" />
+          </div>
+          <h2 class="section-contacts__title">Contact us</h2>
+          <div class="section-contacts__container">
+            <div class="section-contacts__container_item">
+              <span class="section-contacts__container_item-info">City</span>
+              <div class="accordion__btn-dark">
+                <img src="" alt="" />
+                <div class="accordion__btn-dark_arrow">
+                  <img src="" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
+
     <footer class="footer">
-      <div class="wrapper"></div>
+      <div class="wrapper">
+        <div class="layout-3-columns">
+          <div class="footer-data">
+            <span>© 2022</span>
+            <a href="https://github.com/1zemzem"><span>Github</span></a>
+          </div>
+          <div class="footer-data">
+            <a href="https://rs.school/js-stage0/"
+              ><span>Rolling Scopes School</span></a
+            >
+          </div>
+          <ul class="social-list">
+            <li class="social-list__item">
+              <a href="https://www.instagram.com/rsschool_news/">
+                <img src="./src/img/icons/insta.svg" alt="instagram" />
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="https://www.facebook.com/RollingScopesSchool">
+                <img src="./src/img/icons/facebook.svg" alt="facebook" />
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="https://twitter.com/?lang=ru">
+                <img src="./src/img/icons/twitter.svg" alt="twitter" />
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="https://www.pinterest.com/">
+                <img src="./src/img/icons/pinterest.svg" alt="pinterest" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
