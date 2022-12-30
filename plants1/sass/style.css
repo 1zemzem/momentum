@@ -1,0 +1,102 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "serif", "sans-serif";
+}
+
+h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 50px;
+  color: #717171;
+}
+
+h2 {
+  font-family: "Inika";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  color: #499A18;
+}
+
+h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: right;
+  color: #000000;
+}
+
+h4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #E06733;
+}
+
+h5 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+}
+
+@font-face {
+  font-family: inika;
+  src: url("../../src/fonts/Inika-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: inika;
+  src: url("../../src/fonts/Inika-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: inter;
+  src: url("../../src/fonts/Inter-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: inter;
+  src: url("../../src/fonts/Inter-Bold.ttf");
+  font-weight: 700;
+}
+.wrapper {
+  max-width: 1222px;
+  margin: auto;
+}
+
+.header {
+  background-color: #EDF2EC;
+}
+
+.section-welcome {
+  background-color: #EDF2EC;
+}
+
+.section-welcome {
+  background-color: #EDF2EC;
+}
+
+/*# sourceMappingURL=style.css.map */

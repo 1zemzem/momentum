@@ -1,0 +1,16 @@
+{
+  "name": "plants1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "style": "sass --watch sass/style.scss sass/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tatsiana Ziamliakova",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "\"https://github.com/rolling-scopes-school/1zemzem-JSFEPRESCHOOL2022Q4\""
+  },
+  "description": ""
+}

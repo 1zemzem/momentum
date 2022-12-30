@@ -1,0 +1,63 @@
+html {
+	box-sizing: border-box;
+	font-size: 10px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	margin: 0;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: 'serif', 'sans-serif';
+}
+
+h1 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 45px;
+	line-height: 50px;
+	color: $color-grey;
+}
+
+h2 {
+	font-family: 'Inika';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 52px;
+	color: $color-green;
+}
+
+h3 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 50px;
+	text-align: right;
+	color: $color-black;
+}
+
+h4 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: $color-orange;
+}
+
+h5 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 20px;
+	color: $color-black;
+}
