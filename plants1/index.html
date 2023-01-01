@@ -15,7 +15,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="wrapper">
+      <div class="wrapper header__wrapper">
         <logo class="logo">
           <img src="./src/img/logo_vector.svg" alt="logo" class="logo-img" />
           <span>Plants</span>
@@ -45,37 +45,39 @@
     <main class="main">
       <section class="section-welcome" id="Welcome">
         <div class="wrapper">
-          <img
-            src="./src/img/leafs.png"
-            alt="leafs"
-            class="section-welcome__img"
-          />
-          <div class="section-welcome__info"></div>
-          <h1 class="section-welcome__title">
-            We grow <span class="section-welcome__title_green">plants</span> and
-            give you oxygen
-          </h1>
-          <div class="section-welcome__description">
-            We grow plants and give you oxygen Lorem Ipsum is simply dummy text
-            of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s. LEARN MORE
+          <div class="section-welcome__content">
+            <img
+              src="./src/img/leafs.png"
+              alt="leafs"
+              class="section-welcome__img"
+            />
+            <div class="section-welcome__info">
+              <h1 class="section-welcome__title">
+                We grow
+                <span class="section-welcome__title_green">plants</span> and
+                give you oxygen
+              </h1>
+              <p class="section-welcome__description">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+              </p>
+              <button class="button-black-text">Learn more</button>
+            </div>
           </div>
-          <button class="button button_black-text"></button>
         </div>
       </section>
 
       <section class="section-about" id="About">
         <div class="wrapper">
           <div class="layout-2-columns">
-            <article class="section-about__info">
-              <h2 class="section-about__title">
+            <div class="layout-2-columns__info">
+              <h2 class="layout-2-columns__title">
                 We are
-                <span class="section-about__title_red"
+                <span class="layout-2-columns__title_orange"
                   >professional experienced</span
                 >
                 gardeners
               </h2>
-              <p class="section-about__description">
+              <p class="layout-2-columns__description">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -83,54 +85,84 @@
                 survived not only five centuries, but also the leap into
                 electronic typesetting, remaining essentially unchanged.
               </p>
-            </article>
-            <img src="./src/img/houseplant 1.png" alt="plants" />
+            </div>
+            <img src="./src/img/houseplant 1.png" alt="plants" class="layout-2-columns__image"/>
           </div>
         </div>
       </section>
 
-      <section class="section-welcome" id="Service">
+      <section class="section-service" id="Service">
         <div class="wrapper">
           <div class="section-service__heading">
             <h2 class="section-service__heading-title">
               Service and our projects
             </h2>
             <div class="section-service__heading-buttons">
-              <button class="button">Gardens</button>
-              <button class="button">Lawn</button>
-              <button class="button">Planting</button>
+              <button class="button section-service__heading-buttons-item">Gardens</button>
+              <button class="button section-service__heading-buttons-item">Lawn</button>
+              <button class="button section-service__heading-buttons-item">Planting</button>
             </div>
           </div>
           <div class="gallery">
             <div class="card">
               <img src="./src/img/item1.png" alt="photo" class="card__img" />
-              <h4 class="card__title">Garden care</h4>
-              <p class="card__info">Lorem Ipsum has been the industry</p>
+
+              <div class="card__rectangle">
+
+                <div class="card__content">
+                  <h4 class="card__title">Garden care</h4>
+                  <p class="card__info">Lorem Ipsum has been the industry</p>
+                </div>
+
+              </div>             
+
             </div>
+            
             <div class="card">
               <img src="./src/img/item2.png" alt="photo" class="card__img" />
-              <h4 class="card__title">Garden care</h4>
-              <p class="card__info">Lorem Ipsum has been the industry</p>
+              <div class="card__rectangle">
+                <div class="card__content">
+                  <h4 class="card__title">Garden care</h4>
+                  <p class="card__info">Lorem Ipsum has been the industry</p>
+                </div>
+              </div>   
             </div>
             <div class="card">
               <img src="./src/img/item3.png" alt="photo" class="card__img" />
-              <h4 class="card__title">Garden care</h4>
-              <p class="card__info">Lorem Ipsum has been the industry</p>
+              <div class="card__rectangle">
+                <div class="card__content">
+                  <h4 class="card__title">Garden care</h4>
+                  <p class="card__info">Lorem Ipsum has been the industry</p>
+                </div>
+              </div>   
             </div>
             <div class="card">
               <img src="./src/img/item4.png" alt="photo" class="card__img" />
-              <h4 class="card__title">Garden care</h4>
-              <p class="card__info">Lorem Ipsum has been the industry</p>
+              <div class="card__rectangle">
+                <div class="card__content">
+                  <h4 class="card__title">Garden care</h4>
+                  <p class="card__info">Lorem Ipsum has been the industry</p>
+                </div>
+                
+              </div>   
             </div>
             <div class="card">
               <img src="./src/img/item5.png" alt="photo" class="card__img" />
-              <h4 class="card__title">Garden care</h4>
-              <p class="card__info">Lorem Ipsum has been the industry</p>
+              <div class="card__rectangle">
+                <div class="card__content">
+                  <h4 class="card__title">Garden care</h4>
+                  <p class="card__info">Lorem Ipsum has been the industry</p>
+                </div>
+              </div>   
             </div>
             <div class="card">
               <img src="./src/img/item6.png" alt="photo" class="card__img" />
-              <h4 class="card__title">Garden care</h4>
-              <p class="card__info">Lorem Ipsum has been the industry</p>
+              <div class="card__rectangle">
+                <div class="card__content">
+                  <h4 class="card__title">Garden care</h4>
+                  <p class="card__info">Lorem Ipsum has been the industry</p>
+                </div>
+              </div>   
             </div>
           </div>
         </div>
@@ -186,7 +218,7 @@
         </div>
       </section>
 
-      <section class="section" id="Contacts">
+      <section class="section-contacts" id="Contacts">
         <div class="wrapper">
           <div class="section-contacts__img">
             <img src="./src/img/contact_woman 1.png" alt="woman image" />
@@ -211,7 +243,8 @@
       <div class="wrapper">
         <div class="layout-3-columns">
           <div class="footer-data">
-            <span>© 2022</span>
+            <span class="footer-data__info">©</span>
+            <span class="footer-data__info">2022</span>
             <a href="https://github.com/1zemzem"><span>Github</span></a>
           </div>
           <div class="footer-data">

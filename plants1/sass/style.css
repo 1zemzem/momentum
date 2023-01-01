@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -12,7 +13,34 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "serif", "sans-serif";
+  font-family: inter, "serif", "sans-serif";
+  font-weight: 400;
+}
+
+input[type=text],
+input[type=phone],
+input[type=email],
+textarea {
+  appearance: none;
+}
+input[type=text]:focus,
+input[type=phone]:focus,
+input[type=email]:focus,
+textarea:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
 }
 
 h1 {
@@ -88,15 +116,207 @@ h5 {
 }
 
 .header {
+  background: #EDF2EC;
+  padding: 42px 0 42px 0;
+  font-family: inika;
+  font-weight: 400;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item {
+  list-style: none;
+  margin-right: 46px;
+}
+.nav-item:last-child {
+  margin-right: 0;
+}
+
+.nav-link {
+  color: #010201;
+}
+.nav-link:hover {
+  color: #E06733;
+  font-weight: 700;
+}
+
+.layout-3-columns {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 40px 0;
+}
+
+.footer-data__info {
+  margin-right: 20px;
+}
+
+.social-list {
+  display: flex;
+}
+
+.social-list__item {
+  list-style: none;
+  margin-right: 20px;
+}
+.social-list__item:last-child {
+  margin-right: 0;
+}
+
+.button {
+  padding: 12px 40px;
+  border-radius: 5px;
+  border: 1px solid #E06733;
+  font-family: "Inika";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #E06733;
+}
+
+.button-black-text {
   background-color: #EDF2EC;
+  padding: 12px 27px;
+  border: 2px solid #E06733;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.button-black-text:hover {
+  color: #FFFFFF;
+  background-color: #E06733;
 }
 
 .section-welcome {
   background-color: #EDF2EC;
+  padding: 62px 0 62px 0;
 }
 
-.section-welcome {
+.section-welcome__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-welcome__img {
+  margin-right: 222px;
+  width: 100%;
+  max-width: 449;
+}
+
+.section-welcome__title {
+  margin-bottom: 42px;
+  line-height: 50px;
+}
+
+.section-welcome__title_green {
+  color: #499A18;
+}
+
+.section-welcome__description {
+  margin-bottom: 48px;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.section-contacts {
   background-color: #EDF2EC;
+}
+
+.section-about {
+  padding: 93px 0 94px 0;
+}
+
+.layout-2-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.layout-2-columns__info {
+  margin-right: 155px;
+}
+.layout-2-columns__title {
+  margin-bottom: 40px;
+}
+.layout-2-columns__title_orange {
+  color: #E06733;
+}
+.layout-2-columns__description {
+  font-size: 20px;
+  line-height: 30px;
+}
+.layout-2-columns__image {
+  width: 100%;
+  max-width: 464px;
+}
+
+.section-service {
+  background-color: #EDF2EC;
+  padding: 40px 0 121px 0;
+}
+.section-service__heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 92px;
+}
+.section-service__heading-title {
+  margin-right: 142px;
+}
+.section-service__heading-buttons {
+  margin-right: 215px;
+  display: flex;
+}
+.section-service__heading-buttons-item {
+  background-color: #EDF2EC;
+  margin-right: 38px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 116px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__img {
+  width: 100%;
+  max-width: 330px;
+}
+.card__rectangle {
+  box-sizing: border-box;
+  padding: 10px 0 36px 0;
+  width: 100%;
+  max-width: 330px;
+  border: 1px solid #E3E1D5;
+  border-radius: 0px 0px 20px 20px;
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__title {
+  margin-bottom: 10px;
+}
+.card__info {
+  padding: 0 8px 0 8px;
 }
 
 /*# sourceMappingURL=style.css.map */

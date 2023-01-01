@@ -1,0 +1,32 @@
+.section-about {
+    padding: 93px 0 94px 0;
+
+}
+
+.layout-2-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__info {
+        margin-right: 155px;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+        &_orange {
+            color: $color-orange;
+        }
+    }
+
+    &__description {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 464px;
+    }
+
+}

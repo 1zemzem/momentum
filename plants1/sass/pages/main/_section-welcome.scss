@@ -1,0 +1,32 @@
+.section-welcome {
+    background-color: $color-bg-section;
+    padding: 62px 0 62px 0;
+}
+
+.section-welcome__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-welcome__img {
+    margin-right: 222px;
+    width: 100%;
+    max-width: 449;
+}
+
+.section-welcome__title {
+    margin-bottom: 42px;
+    line-height: 50px;
+}
+
+.section-welcome__title_green {
+    color: $color-green;
+}
+
+.section-welcome__description {
+    margin-bottom: 48px;
+    font-size: 20px;
+    line-height: 35px;
+}
+
