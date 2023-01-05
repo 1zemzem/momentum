@@ -287,6 +287,9 @@ h5 {
 .section-contacts__dropdown {
   margin-top: 88px;
 }
+.section-contacts__dropdown:hover {
+  background-color: #C1E698;
+}
 
 .section-about {
   padding: 93px 0 94px 0;
