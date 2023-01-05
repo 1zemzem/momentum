@@ -1,0 +1,22 @@
+.layout-3-columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 40px 0;
+}
+
+.footer-data__info {
+    margin-right: 20px;
+}
+
+.social-list {
+    display: flex;
+}
+
+.social-list__item {
+    list-style: none;
+    margin-right: 20px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

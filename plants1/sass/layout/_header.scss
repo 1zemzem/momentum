@@ -1,0 +1,39 @@
+.header {
+    background: $color-bg-section;
+    padding: 42px 0 42px 0;
+    font-family: inika;
+    font-weight: 400;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-list {
+    display: flex;
+}
+
+.nav-item {
+    list-style: none;
+    margin-right: 46px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.nav-link {
+    color: $color-link;
+
+    &:hover {
+        color: $color-orange;
+        font-weight: 700;
+    }
+
+    &_selected {
+        color: $color-orange;
+        font-weight: 700;
+    }
+}

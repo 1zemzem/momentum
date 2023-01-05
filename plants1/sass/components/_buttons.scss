@@ -1,0 +1,35 @@
+.button {
+    padding: 12px 40px;
+    border-radius: 5px;
+    border: 1px solid $color-orange;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: $color-orange;
+}
+
+.button-black-text {
+    background-color: $color-bg-section;
+    padding: 12px 27px;
+    border: 2px solid $color-orange;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-black;
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-orange;
+    }
+}
+
+.accordion__btn {
+    width: 16px;
+    height: 16px;
+}

@@ -1,6 +1,7 @@
 html {
 	box-sizing: border-box;
 	font-size: 10px;
+	scroll-behavior: smooth;
 }
 
 *,
@@ -12,7 +13,33 @@ html {
 
 body {
 	font-size: 1.6rem;
-	font-family: 'serif', 'sans-serif';
+	font-family: inter, 'serif', 'sans-serif';
+	font-weight: 400;
+}
+
+input[type="text"],
+input[type="phone"],
+input[type="email"],
+textarea {
+	appearance: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+button {
+	cursor: pointer;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 h1 {
