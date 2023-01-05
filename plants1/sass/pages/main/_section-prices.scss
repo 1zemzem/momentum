@@ -66,5 +66,10 @@
         font-weight: 700;
         padding: 12px 30px;
         margin-bottom: 39px;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-orange;
+        }
     }
 }
