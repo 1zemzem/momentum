@@ -20,6 +20,11 @@
             &-item {
                 background-color: $color-bg-section;
                 margin-right: 38px;
+
+                &:hover {
+                    background-color: $color-orange;
+                    color: $color-white;
+                }
             }
         }
 
@@ -29,15 +34,22 @@
 }
 
 .gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 116px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // gap: 116px;
+    @include columns($width: 27%);
+    // &:after {
+    //     content: '';
+    //     width: 30%;
+    //     display: block;
+    // }
 }
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 55px;
 
     &__img {
         width: 100%;
@@ -66,8 +78,4 @@
     &__info {
         padding: 0 8px 0 8px;
     }
-
-
-
-
 }

@@ -22,8 +22,6 @@
     &:last-child {
         margin-right: 0;
     }
-
-    ;
 }
 
 .nav-link {
@@ -34,5 +32,8 @@
         font-weight: 700;
     }
 
-    ;
+    &_selected {
+        color: $color-orange;
+        font-weight: 700;
+    }
 }

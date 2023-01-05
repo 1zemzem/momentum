@@ -1,4 +1,5 @@
 @import "abstracts/constants";
+@import "abstracts/mixins.scss";
 
 @import "base/base";
 @import "base/fonts";
@@ -8,9 +9,10 @@
 @import "layout/footer";
 
 @import "components/buttons";
+@import "components/dropdown";
 
 @import "pages/main/section-welcome";
 @import "pages/main/section-contacts";
 @import "pages/main/section-about";
-@import "pages/main/section-service"
-
+@import "pages/main/section-service";
+@import "pages/main/section-prices";
