@@ -185,7 +185,6 @@ h5 {
   line-height: 26px;
   color: #E06733;
 }
-
 .button-black-text {
   background-color: #EDF2EC;
   padding: 12px 27px;
@@ -441,6 +440,10 @@ h5 {
   font-weight: 700;
   padding: 12px 30px;
   margin-bottom: 39px;
+}
+.context-column__button:hover {
+  color: #FFFFFF;
+  background-color: #E06733;
 }
 
 /*# sourceMappingURL=style.css.map */
