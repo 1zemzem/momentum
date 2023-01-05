@@ -43,6 +43,10 @@ a:hover {
   text-decoration: none;
 }
 
+ul, ol {
+  padding: 0;
+}
+
 h1 {
   font-family: "Inter";
   font-style: normal;
@@ -117,9 +121,13 @@ h5 {
 
 .header {
   background: #EDF2EC;
-  padding: 42px 0 42px 0;
+  padding: 54px 0 42px 0;
   font-family: inika;
   font-weight: 400;
+}
+
+.logo {
+  display: flex;
 }
 
 .header__wrapper {
@@ -152,14 +160,20 @@ h5 {
   font-weight: 700;
 }
 
+.footer {
+  height: auto;
+}
+
 .layout-3-columns {
   display: flex;
   justify-content: space-between;
-  padding: 40px 0 40px 0;
+  font-size: 20px;
+  line-height: 50px;
+  padding: 32px 0 40px 0;
 }
 
-.footer-data__info {
-  margin-right: 20px;
+.footer-data__info:not(last-child) {
+  margin-right: 16px;
 }
 
 .social-list {
@@ -168,7 +182,7 @@ h5 {
 
 .social-list__item {
   list-style: none;
-  margin-right: 20px;
+  margin-right: 28px;
 }
 .social-list__item:last-child {
   margin-right: 0;
@@ -176,6 +190,8 @@ h5 {
 
 .button {
   padding: 12px 40px;
+  width: 161px;
+  height: 50px;
   border-radius: 5px;
   border: 1px solid #E06733;
   font-family: "Inika";
@@ -187,7 +203,7 @@ h5 {
 }
 .button-black-text {
   background-color: #EDF2EC;
-  padding: 12px 27px;
+  padding: 10px 24px;
   border: 2px solid #E06733;
   border-radius: 10px;
   text-transform: uppercase;
@@ -212,7 +228,7 @@ h5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 17px;
+  padding: 5px 24px;
   width: 100%;
   max-width: 450px;
   height: 50px;
@@ -237,7 +253,7 @@ h5 {
 
 .section-welcome {
   background-color: #EDF2EC;
-  padding: 62px 0 62px 0;
+  padding: 74px 0 54px 0;
 }
 
 .section-welcome__content {
@@ -247,7 +263,7 @@ h5 {
 }
 
 .section-welcome__img {
-  margin-right: 222px;
+  margin-right: 212px;
   width: 100%;
   max-width: 449;
 }
@@ -278,7 +294,6 @@ h5 {
   width: 100%;
   max-width: 400px;
   margin-right: 113px;
-  margin-bottom: -4px;
 }
 .section-contacts__title {
   font-weight: 700;
@@ -320,18 +335,18 @@ h5 {
 
 .section-service {
   background-color: #EDF2EC;
-  padding: 40px 0 121px 0;
+  padding: 40px 0 68px 0;
 }
 .section-service__heading {
   display: flex;
   align-items: center;
-  margin-bottom: 92px;
+  margin-bottom: 80px;
 }
 .section-service__heading-title {
   margin-right: 142px;
 }
 .section-service__heading-buttons {
-  margin-right: 215px;
+  margin-right: 180px;
   display: flex;
 }
 .section-service__heading-buttons-item {
@@ -383,7 +398,7 @@ h5 {
 }
 
 .section-prices {
-  padding: 30px 0 115px 0;
+  padding: 38px 0 100px 0;
 }
 
 .section-prices-layout {

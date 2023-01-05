@@ -1,6 +1,6 @@
 .section-contacts {
     background-color: $color-bg-section;
-    padding-top: 56px;
+    padding-top: 60px;
 
     &-layout {
         display: flex;
@@ -10,7 +10,6 @@
         width: 100%;
         max-width: 400px;
         margin-right: 113px;
-        margin-bottom: -4px;
     }
 
     &__title {

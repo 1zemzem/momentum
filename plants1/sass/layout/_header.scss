@@ -1,8 +1,12 @@
 .header {
     background: $color-bg-section;
-    padding: 42px 0 42px 0;
+    padding: 54px 0 42px 0;
     font-family: inika;
     font-weight: 400;
+}
+
+.logo {
+    display: flex;
 }
 
 .header__wrapper {
