@@ -20,6 +20,10 @@
 
     &__dropdown {
         margin-top: 88px;
+
+        &:hover {
+            background-color: #C1E698;
+        }
     }
 
 }
