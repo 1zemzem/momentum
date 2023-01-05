@@ -1,11 +1,11 @@
 .section-service {
     background-color: $color-bg-section;
-    padding: 40px 0 121px 0;
+    padding: 40px 0 80px 0;
 
     &__heading {
         display: flex;
         align-items: center;
-        margin-bottom: 92px;
+        margin-bottom: 80px;
 
         &-title {
             margin-right: 142px;
@@ -14,7 +14,7 @@
         ;
 
         &-buttons {
-            margin-right: 215px;
+            margin-right: 180px;
             display: flex;
 
             &-item {
