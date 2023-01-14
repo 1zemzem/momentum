@@ -2,15 +2,38 @@
     background-color: $color-bg-section;
     padding-top: 60px;
 
+    @include media-tablet {
+        height: auto;
+        flex-direction: column;
+    }
+
     &-layout {
         display: flex;
+
+
+        @include media-tablet {
+            flex-direction: column;
+        }
     }
 
     &__img {
         width: 100%;
         max-width: 400px;
         margin-right: 113px;
+       
+
+        @include media-tablet {
+            max-width: 200px;
+
+        }
     }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
 
     &__title {
         font-weight: 700;
@@ -19,6 +42,8 @@
 
     &__dropdown {
         margin-top: 88px;
+        width: 450px;
+        height: 50px;
 
         &:hover {
             background-color: #C1E698;

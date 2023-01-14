@@ -1,23 +1,43 @@
 .section-welcome {
     background-color: $color-bg-section;
     padding: 74px 0 54px 0;
+
+    @include media-tablet {
+        padding: 40px 0 70px 0;
+    }
 }
 
 .section-welcome__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include media-tablet {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
 }
 
 .section-welcome__img {
-    margin-right: 212px;
+    margin-right: 222px;
     width: 100%;
-    max-width: 449;
+    max-width: 449px;
+
+    @include media-tablet {
+        max-width: 280px;
+        margin-right: 0;
+        margin-left: 42px;
+    }
 }
 
 .section-welcome__title {
     margin-bottom: 42px;
-    line-height: 50px;
+    line-height: 5rem;
+
+    @include media-tablet {
+        font-size: 3.5rem;
+        margin-bottom: 30px;
+    }
 }
 
 .section-welcome__title_green {
@@ -26,6 +46,12 @@
 
 .section-welcome__description {
     margin-bottom: 48px;
-    font-size: 20px;
-    line-height: 35px;
+    font-size: 2rem;
+    line-height: 3.5rem;
+    color: $color-dark-grey;
+
+    @include media-tablet {
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+    }
 }
