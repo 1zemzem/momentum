@@ -1,6 +1,10 @@
 .section-about {
     padding: 93px 0 94px 0;
 
+    @include media-tablet {
+        padding: 40px 0 95px 0;
+    }
+
 }
 
 .layout-2-columns {
@@ -8,8 +12,19 @@
     justify-content: space-between;
     align-items: center;
 
+    @include media-tablet {
+        flex-direction: column;
+    }
+
     &__info {
         margin-right: 155px;
+        padding-top: 8px;
+
+        @include media-tablet {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
     }
 
     &__title {
@@ -18,16 +33,31 @@
         &_orange {
             color: $color-orange;
         }
+
+        @include media-tablet {
+            padding: 0 122px;
+            font-size: 3.5rem;
+            line-height: 4.6rem;
+        }
     }
 
     &__description {
-        font-size: 20px;
-        line-height: 30px;
+        font-size: 2rem;
+        line-height: 3rem;
+        color: $color-dark-grey;
+
+        @include media-tablet {
+            margin-bottom: 40px;
+        }
     }
 
     &__image {
         width: 100%;
         max-width: 464px;
+
+        @include media-tablet {
+            max-width: 250px;
+        }
     }
 
 }
