@@ -1,5 +1,5 @@
 @import "abstracts/constants";
-@import "abstracts/mixins.scss";
+@import "abstracts/mixins";
 
 @import "base/base";
 @import "base/fonts";
@@ -10,6 +10,7 @@
 
 @import "components/buttons";
 @import "components/dropdown";
+@import "components/burger";
 
 @import "pages/main/section-welcome";
 @import "pages/main/section-contacts";
