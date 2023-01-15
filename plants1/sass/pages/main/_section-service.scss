@@ -2,6 +2,10 @@
     background-color: $color-bg-section;
     padding: 40px 0 68px 0;
 
+    @include media-tablet {
+        padding: 60px 0 32px 0;
+    }
+
     &__heading {
         display: flex;
         align-items: center;
@@ -10,15 +14,17 @@
         @include media-tablet-wide {
             flex-direction: column;
             align-items: flex-start;
+            margin-bottom: 42px;
         }
 
         @include media-tablet {
             flex-direction: column;
             align-items: flex-start;
+            margin-bottom: 42px;
         }
 
         &-title {
-            margin-right: 142px;
+            margin-right: 152px;
 
             @include media-tablet-wide {
                 margin-bottom: 40px;
@@ -59,7 +65,7 @@
     @include columns($width: 27%);
 
     @include media-tablet {
-        @include columns($width: 48%);
+        @include columns($width: 42%);
     }
 }
 
@@ -70,6 +76,10 @@
     margin-bottom: 55px;
     width: 100%;
     max-width: 330px;
+    @include media-tablet {
+        margin-bottom: 38px;
+    }
+
 
     &__img {
         width: 100%;

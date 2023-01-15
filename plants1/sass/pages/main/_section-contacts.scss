@@ -5,6 +5,7 @@
     @include media-tablet {
         height: auto;
         flex-direction: column;
+        padding-top: 40px;
     }
 
     &__wrapper {
@@ -19,7 +20,7 @@
             align-items: center;
             background-image: url("../../../src/img/contact_woman1_small.png");
             background-repeat: no-repeat;
-            background-position: center bottom;
+            background-position: left 52% bottom;
         }
     }
 
@@ -62,13 +63,19 @@
     }
 
     &__dropdown {
-        margin: 88px 0 352px 0;
+        margin: 89px 0 352px 0;
         width: 450px;
         height: 50px;
+
+        @include media-tablet {
+            margin: 98px 0 498px 0;
+        }
 
         &:hover {
             background-color: #C1E698;
         }
+
+       
     }
 
 }
