@@ -7,6 +7,11 @@
         align-items: center;
         margin-bottom: 80px;
 
+        @include media-tablet-wide {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
         @include media-tablet {
             flex-direction: column;
             align-items: flex-start;
@@ -15,9 +20,13 @@
         &-title {
             margin-right: 142px;
 
+            @include media-tablet-wide {
+                margin-bottom: 40px;
+                font-size: 3.5rem;
+                line-height: 4.6rem;
+            }
+
             @include media-tablet {
-                max-width: 306px;
-                width: 100%;
                 margin-bottom: 40px;
                 font-size: 3.5rem;
                 line-height: 4.6rem;

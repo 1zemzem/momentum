@@ -12,6 +12,14 @@
     @media (max-width: $screen-width) { @content; }
 }
 
+@mixin media-screen-small {
+    @media (max-width: $content-width) { @content; }
+}
+
+@mixin media-tablet-wide {
+    @media (max-width: $tablet-wide-width) { @content; }
+}
+
 @mixin media-tablet {
     @media (max-width: $tablet-width) { @content; }
 }

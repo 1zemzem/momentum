@@ -7,41 +7,62 @@
         flex-direction: column;
     }
 
+    &__wrapper {
+        background-image: url("../../../src/img/contact_woman1.png");
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: flex-end;
+
+        @include media-tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("../../../src/img/contact_woman1_small.png");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+        }
+    }
+
     &-layout {
         display: flex;
 
-
         @include media-tablet {
+            display: flex;
             flex-direction: column;
-        }
-    }
-
-    &__img {
-        width: 100%;
-        max-width: 400px;
-        margin-right: 113px;
-       
-
-        @include media-tablet {
-            max-width: 200px;
+            align-items: center;
 
         }
     }
 
-    &__info {
-        display: flex;
-        justify-content: space-between;
-    }
+    // &__img {
+    //     width: 100%;
+    //     max-width: 400px;
+    //     margin-right: 113px;
+
+
+    //     @include media-tablet {
+    //         max-width: 200px;
+
+    //     }
+    // }
+
+    // &__info {
+    //     display: flex;
+    //     justify-content: flex-end;
+    // }
 
 
 
     &__title {
         font-weight: 700;
         margin-right: 64px;
+        @include media-tablet {
+            margin-right: 0;
+        }
     }
 
     &__dropdown {
-        margin-top: 88px;
+        margin: 88px 0 352px 0;
         width: 450px;
         height: 50px;
 

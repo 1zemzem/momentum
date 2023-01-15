@@ -20,6 +20,10 @@
         margin-right: 155px;
         padding-top: 8px;
 
+        @include media-tablet-wide {
+            margin-right: 22px;
+        }
+
         @include media-tablet {
             display: flex;
             flex-direction: column;
