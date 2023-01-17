@@ -6,60 +6,77 @@
         padding: 40px 0 70px 0;
     }
 
-
-&__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    @include media-tablet {
-        flex-direction: row-reverse;
-        align-items: flex-start;
-    }
-}
-
-&__img {    
-    width: 100%;
-    max-width: 449px;
-    margin-right: 222px;
-
-    @include media-tablet-wide {
-        margin-right: 22px;
+    @include media-mobile {
+        padding: 24px 0 24px 0;
     }
 
-    @include media-tablet {
-        max-width: 280px;
-        margin-right: 0;
-        margin-left: 42px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media-tablet {
+            flex-direction: row-reverse;
+            align-items: flex-start;
+        }
     }
-}
 
-&__title {
-    margin-bottom: 42px;
-    line-height: 5rem;
+    &__img {
+        width: 100%;
+        max-width: 449px;
+        margin-right: 222px;
 
-    @include media-tablet {
-        font-size: 3.5rem;
-        margin-bottom: 30px;
+        @include media-tablet-wide {
+            margin-right: 22px;
+        }
+
+        @include media-tablet {
+            max-width: 280px;
+            margin-right: 0;
+            margin-left: 42px;
+        }
+
+        @include media-mobile {
+            display: none;
+        }
     }
-&__title_green {
-    color: $color-green;
-}
 
-}
+    &__title {
+        margin-bottom: 42px;
+        line-height: 5rem;
 
+        &_green {
+            color: $color-green;
+        }
 
+        @include media-tablet {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+        }
 
-&__description {
-    margin-bottom: 48px;
-    font-size: 2rem;
-    line-height: 3.5rem;
-    color: $color-dark-grey;
+        @include media-mobile {
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+            margin-bottom: 20px;
+        }
 
-    @include media-tablet {
-        font-size: 1.6rem;
-        line-height: 2.5rem;
-        margin-bottom: 34px;
     }
-}
+
+    &__description {
+        margin-bottom: 48px;
+        font-size: 2rem;
+        line-height: 3.5rem;
+        color: $color-dark-grey;
+
+        @include media-tablet {
+            font-size: 1.6rem;
+            line-height: 2.5rem;
+            margin-bottom: 34px;
+        }
+
+        @include media-mobile {
+            margin-bottom: 2.5rem;
+        }
+    }
 }

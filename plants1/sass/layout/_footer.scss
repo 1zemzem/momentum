@@ -12,14 +12,19 @@
     @include media-tablet {
         flex-direction: column;
         align-items: center;
-        padding: 20px 0 40px 0;
+        padding: 33px 0 18px 0;
+        line-height: 2.4rem;
+    }
+
+    @include media-mobile {
+        padding: 22px 0 8px 0;
     }
 }
 
-.footer-data:nth-child(2) {
+.footer-data:not(last-child) {
     @include media-tablet {
-        line-height: 3.7rem;
-        padding-bottom: 8px;
+        
+         padding-bottom: 14px;
     }
 }
 
@@ -29,6 +34,14 @@
 
 .social-list {
     display: flex;
+
+    @include media-tablet {
+        margin-top: 10px;
+    }
+
+    @include media-mobile {
+        margin-top: 0;
+    }
 }
 
 .social-list__item {

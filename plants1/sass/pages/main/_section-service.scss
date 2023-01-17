@@ -6,6 +6,10 @@
         padding: 60px 0 32px 0;
     }
 
+    @include media-mobile {
+        padding: 30px 0 0 0;
+    }
+
     &__heading {
         display: flex;
         align-items: center;
@@ -23,6 +27,10 @@
             margin-bottom: 42px;
         }
 
+        @include media-mobile {
+            margin-bottom: 30px;
+        }
+
         &-title {
             margin-right: 152px;
 
@@ -37,6 +45,13 @@
                 font-size: 3.5rem;
                 line-height: 4.6rem;
             }
+
+            @include media-mobile {
+                margin-bottom: 38px;
+                font-size: 2.5rem;
+                line-height: 3.3rem;
+                margin-right: 0;
+            }
         }
 
         ;
@@ -45,13 +60,18 @@
             margin-right: 180px;
             display: flex;
 
+            @include media-mobile {
+                flex-wrap: wrap;
+                margin-right: 0;
+            }
+
             &-item {
                 background-color: $color-bg-section;
                 margin-right: 38px;
 
-                &:hover {
-                    background-color: $color-orange;
-                    color: $color-white;
+                @include media-mobile {
+                    margin-bottom: 10px;
+                    margin-right: 10px;
                 }
             }
         }
@@ -67,6 +87,10 @@
     @include media-tablet {
         @include columns($width: 42%);
     }
+
+    @include media-mobile {
+        @include columns($width: 100%);
+    }
 }
 
 .card {
@@ -76,8 +100,16 @@
     margin-bottom: 55px;
     width: 100%;
     max-width: 330px;
+
     @include media-tablet {
         margin-bottom: 38px;
+    }
+
+    @include media-mobile {
+        margin-bottom: 34px;
+        &:last-child {
+            margin-bottom: 26px;
+        }
     }
 
 
@@ -94,7 +126,7 @@
 
     &__rectangle {
         box-sizing: border-box;
-        padding: 12px 0 36px 0;
+        padding: 8px 0 36px 0;
         width: 100%;
         max-width: 330px;
         border: 1px solid #E3E1D5;
