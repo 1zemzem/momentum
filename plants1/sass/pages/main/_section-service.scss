@@ -57,19 +57,17 @@
         ;
 
         &-buttons {
-            margin-right: 180px;
             display: flex;
 
-            @include media-mobile {
+            @include media-small {
                 flex-wrap: wrap;
-                margin-right: 0;
             }
 
             &-item {
                 background-color: $color-bg-section;
                 margin-right: 38px;
 
-                @include media-mobile {
+                @include media-small {
                     margin-bottom: 10px;
                     margin-right: 10px;
                 }
@@ -107,6 +105,7 @@
 
     @include media-mobile {
         margin-bottom: 34px;
+
         &:last-child {
             margin-bottom: 26px;
         }

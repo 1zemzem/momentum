@@ -1,20 +1,35 @@
 .wrapper {
-    max-width: $content-width;
+    padding-right: 109px;
+    padding-left: 109px;
     margin: auto;
 
     @include media-screen-small {
-        max-width: 1120px;
+        padding-right: 50px;
+        padding-left: 50px;
     }
 
     @include media-tablet-wide {
-        max-width: 880px;
+        padding-right: 50px;
+        padding-left: 50px;
     }
 
     @include media-tablet {
-        max-width: 668px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    @include media-small {
+        padding-right: 25px;
+        padding-left: 25px;
     }
 
     @include media-mobile {
-        max-width: 330px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    @include media-xs {
+        padding-right: 10px;
+        padding-left: 10px;
     }
 }

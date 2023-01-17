@@ -15,8 +15,12 @@
 }
 
 .logo {
-    display: inline-flex;
-    align-items: baseline;
+    display: flex;
+    align-items: center;
+    @include media-mobile {
+        display: inline-flex;
+        align-items: baseline;
+    }
 }
 
 .header__wrapper {
@@ -28,7 +32,7 @@
 .nav-list {
     display: flex;
 
-    @include media-mobile {
+    @include media-small {
         display: none;
     }
 }
