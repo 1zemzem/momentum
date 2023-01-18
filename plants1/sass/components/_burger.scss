@@ -1,40 +1,26 @@
-%burger-line {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    background-color: $color-grey;
-    width: 100%;
-    height: 2px;
-}
-
 .burger {
     display: none;
-    position: relative;
-    width: 40px;
-    height: 24px;
+
     @include media-small {
-        display: inline-block;
+        display: flex;
+        align-items: center;
     }
-    &:before {
-        @extend %burger-line;
-        top: 0;
-        left: 0;
-    }
-    &:after {
-        @extend %burger-line;
-        bottom: 0;
-        left: 0;
-    }
-}
 
-.burger__line {
-    @extend %burger-line;
-    top: 7.5px;
-    left: 0;
-}
+    &__field {
+        @include media-small {
+            padding: 11px 0;
+            cursor: pointer;
+        }
 
-.burger__line2 {
-    @extend %burger-line;
-    bottom: 7.5px;
-    left: 0;
+        &-line {
+            @include media-small {
+                display: block;
+                width: 40px;
+                height: 2px;
+                margin-bottom: 6px;
+                background-color: $color-grey;
+                transition: 0.2s;
+            }
+        }
+    }
 }
