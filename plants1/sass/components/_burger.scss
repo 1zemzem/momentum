@@ -4,22 +4,41 @@
     @include media-small {
         display: flex;
         align-items: center;
+
     }
 
     &__field {
         @include media-small {
             padding: 11px 0;
             cursor: pointer;
-        }
 
-        &-line {
-            @include media-small {
-                display: block;
-                width: 40px;
-                height: 2px;
-                margin-bottom: 6px;
-                background-color: $color-grey;
-                transition: 0.2s;
+            &_line {
+                @include media-small {
+                    display: block;
+                    width: 40px;
+                    height: 2px;
+                    margin-bottom: 6px;
+                    background-color: $color-grey;
+                    transition: 0.3s;
+                }
+
+                &-active {
+                    &:nth-child(1) {
+                        transform: translateY(12px) rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(4) {
+                        transform: translateY(-12px) rotate(-45deg);
+                    }
+                }
             }
         }
     }

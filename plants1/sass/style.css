@@ -17,6 +17,10 @@ body {
   font-weight: 400;
 }
 
+body.noscroll {
+  overflow: hidden;
+}
+
 input[type=text],
 input[type=phone],
 input[type=email],
@@ -43,7 +47,8 @@ a:hover {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   padding: 0;
 }
 
@@ -377,14 +382,28 @@ h5 {
     cursor: pointer;
   }
 }
-@media (max-width: 646px) {
-  .burger__field-line {
+@media (max-width: 646px) and (max-width: 646px) {
+  .burger__field_line {
     display: block;
     width: 40px;
     height: 2px;
     margin-bottom: 6px;
     background-color: #717171;
-    transition: 0.2s;
+    transition: 0.3s;
+  }
+}
+@media (max-width: 646px) {
+  .burger__field_line-active:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+  }
+  .burger__field_line-active:nth-child(2) {
+    opacity: 0;
+  }
+  .burger__field_line-active:nth-child(3) {
+    opacity: 0;
+  }
+  .burger__field_line-active:nth-child(4) {
+    transform: translateY(-12px) rotate(-45deg);
   }
 }
 
@@ -466,6 +485,7 @@ h5 {
     font-size: 1.6rem;
     line-height: 2.5rem;
     margin-bottom: 34px;
+    padding-left: 4px;
   }
 }
 @media (max-width: 380px) {

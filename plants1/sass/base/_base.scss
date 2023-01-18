@@ -17,6 +17,10 @@ body {
 	font-weight: 400;
 }
 
+body.noscroll {
+	overflow: hidden;
+}
+
 input[type="text"],
 input[type="phone"],
 input[type="email"],
@@ -42,7 +46,8 @@ a {
 	}
 }
 
-ul, ol {
+ul,
+ol {
 	padding: 0;
 }
 
