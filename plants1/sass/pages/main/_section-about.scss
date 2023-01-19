@@ -38,7 +38,7 @@
     }
 
     &__title {
-        margin-bottom: 50px;
+        margin-bottom: 42px;
 
         &_orange {
             color: $color-orange;
@@ -48,6 +48,7 @@
             text-align: center;
             font-size: 3.5rem;
             line-height: 4.6rem;
+            margin-bottom: 50px;
         }
 
         @include media-mobile {

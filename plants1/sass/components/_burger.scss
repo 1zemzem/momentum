@@ -5,10 +5,12 @@
         display: flex;
         align-items: center;
 
-    }
+        &_open {
+            display: flex;
+            align-items: center;
+        }
 
-    &__field {
-        @include media-small {
+        &__field {
             padding: 11px 0;
             cursor: pointer;
 

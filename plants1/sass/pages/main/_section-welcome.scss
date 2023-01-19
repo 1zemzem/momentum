@@ -37,6 +37,10 @@
             margin-left: 42px;
         }
 
+        @include media-small {
+            display: none;
+        }
+
         @include media-mobile {
             display: none;
         }
@@ -78,6 +82,7 @@
 
         @include media-mobile {
             margin-bottom: 2.5rem;
+            padding-left: 0;
         }
     }
 }

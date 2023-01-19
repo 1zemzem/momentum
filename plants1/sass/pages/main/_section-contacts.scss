@@ -17,6 +17,7 @@
         background-repeat: no-repeat;
         display: flex;
         justify-content: flex-end;
+        background-position: left 10% bottom;
 
         @include media-tablet {
             display: flex;
