@@ -15,7 +15,6 @@
     @include media-mobile {
         padding: 22px 0 22px 0;
     }
-
 }
 
 .logo {
@@ -88,15 +87,15 @@
 }
 
 .nav-mobile .nav-item {
-       margin-right: 0;       
+    margin-right: 0;
+
+    &:hover {
+        background-color: $color-green-light;
+    }
 }
 
 .nav-mobile .nav-link {
     padding: 10px 160px 10px 10px;
     display: block;
     width: 100%;
-    
-    &:hover {
-        background-color: $color-green-light;
-    }
 }

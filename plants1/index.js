@@ -17,11 +17,11 @@ function burgerHandler(e) {
   body.classList.toggle("noscroll");
   navMobile.classList.toggle("nav-mobile_open");
   renderNav();
-};
+}
 
 function renderNav() {
-  navMobile.appendChild(navList)
-};
+  navMobile.appendChild(navList);
+}
 
 navLinks.forEach((link) => {
   link.addEventListener("click", closeOnClick);
