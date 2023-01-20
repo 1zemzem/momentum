@@ -12,10 +12,20 @@
     @media (max-width: $screen-width) { @content; }
 }
 
+@mixin media-screen-small {
+    @media (max-width: $content-width) { @content; }
+}
+
+@mixin media-tablet-wide {
+    @media (max-width: $tablet-wide-width) { @content; }
+}
+
 @mixin media-tablet {
     @media (max-width: $tablet-width) { @content; }
 }
-
+@mixin media-small {
+    @media (max-width: $s-width) {@content;}
+}
 @mixin media-mobile {
     @media (max-width: $mobile-width) { @content; }
 }

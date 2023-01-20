@@ -8,9 +8,23 @@
     font-size: 2rem;
     line-height: 5rem;
     padding: 38px 0 40px 0;
+
     @include media-tablet {
         flex-direction: column;
         align-items: center;
+        padding: 33px 0 18px 0;
+        line-height: 2.4rem;
+    }
+
+    @include media-mobile {
+        padding: 22px 0 8px 0;
+    }
+}
+
+.footer-data:not(last-child) {
+    @include media-tablet {
+
+        padding-bottom: 14px;
     }
 }
 
@@ -20,6 +34,14 @@
 
 .social-list {
     display: flex;
+
+    @include media-tablet {
+        margin-top: 10px;
+    }
+
+    @include media-mobile {
+        margin-top: 0;
+    }
 }
 
 .social-list__item {
@@ -29,5 +51,6 @@
 
     &:last-child {
         margin-right: 0;
+
     }
 }
