@@ -11,6 +11,19 @@
     line-height: 26px;
     color: $color-orange;
 
+    @include media-mobile {
+        width: 121px;
+        height: 35px;
+        padding: 8px 18px;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    &:hover {
+        background-color: $color-orange;
+        color: $color-white;
+    }
+
     &-black-text {
         background-color: $color-bg-section;
         padding: 10px 24px;
@@ -24,9 +37,17 @@
         line-height: 20px;
         color: $color-black;
 
+        @include media-mobile {
+            width: 102px;
+            height: 34.14px;
+            padding: 8px 14px;
+            font-size: 1rem;
+            line-height: 1rem;
+        }
+
         &:hover {
-            color: $color-white;
             background-color: $color-orange;
+            color: $color-white;
         }
     }
 }

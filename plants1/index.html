@@ -21,17 +21,21 @@
     <header class="header">
       <div class="wrapper header__wrapper">
         <div class="logo">
-          <img src="./src/img/logo_vector.svg" alt="logo" class="logo-img" />
+          <img src="./src/img/logo_vector.svg" alt="logo" class="logo__img" />
           <span>Plants</span>
         </div>
         <nav>
-          <span class="header__burger burger">
-            <span class="burger__line"></span>
-            <span class="burger__line2"></span>
-          </span>
-          <ul class="nav-list">
+          <div class="burger" id="burger">
+            <div class="burger__field" id="burgerfield">
+              <span class="burger__field_line"></span>
+              <span class="burger__field_line"></span>
+              <span class="burger__field_line"></span>
+              <span class="burger__field_line"></span>
+            </div>
+          </div>
+          <ul class="nav-list" id="nav-list">
             <li class="nav-item">
-              <a href="#Welcome" class="nav-link_selected">Home</a>
+              <a href="#Welcome" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
               <a href="#About" class="nav-link">About us</a>
@@ -48,6 +52,7 @@
           </ul>
         </nav>
       </div>
+      <div class="nav-mobile" id="nav-mobile"></div>
     </header>
 
     <main class="main">
@@ -83,7 +88,7 @@
               <h2 class="layout-2-columns__title">
                 We are
                 <span class="layout-2-columns__title_orange"
-                  >professional experienced</span
+                  >professional <br />experienced</span
                 >
                 gardeners
               </h2>
@@ -109,7 +114,7 @@
         <div class="wrapper">
           <div class="section-service__heading">
             <h2 class="section-service__heading-title">
-              Service and our projects
+              Service and our<br />projects
             </h2>
             <div class="section-service__heading-buttons">
               <button class="button section-service__heading-buttons-item">
@@ -125,56 +130,104 @@
           </div>
           <div class="gallery">
             <div class="card">
-              <img src="./src/img/item1.png" alt="photo" class="card__img" />
+              <div class="card__img">
+                <img
+                  src="./src/img/item1-full.png"
+                  alt="photo"
+                  class="card__img_item"
+                />
+              </div>
               <div class="card__rectangle">
                 <div class="card__content">
                   <h4 class="card__title">Garden care</h4>
-                  <div class="card__info">Lorem Ipsum has been the industry</div>
+                  <div class="card__info">
+                    Lorem Ipsum has been the industry
+                  </div>
                 </div>
               </div>
             </div>
             <div class="card">
-              <img src="./src/img/item2.png" alt="photo" class="card__img" />
+              <div class="card__img">
+                <img
+                  src="./src/img/item2-full.png"
+                  alt="photo"
+                  class="card__img_item"
+                />
+              </div>
               <div class="card__rectangle">
                 <div class="card__content">
                   <h4 class="card__title">Planting</h4>
-                  <div class="card__info">Lorem Ipsum has been the industry</div>
+                  <div class="card__info">
+                    Lorem Ipsum has been the industry
+                  </div>
                 </div>
               </div>
             </div>
             <div class="card">
-              <img src="./src/img/item3.png" alt="photo" class="card__img" />
+              <div class="card__img">
+                <img
+                  src="./src/img/item3.png"
+                  alt="photo"
+                  class="card__img_item"
+                />
+              </div>
               <div class="card__rectangle">
                 <div class="card__content">
                   <h4 class="card__title">Lawn care</h4>
-                  <div class="card__info">Lorem Ipsum has been the industry</div>
+                  <div class="card__info">
+                    Lorem Ipsum has been the industry
+                  </div>
                 </div>
               </div>
             </div>
             <div class="card">
-              <img src="./src/img/item4.png" alt="photo" class="card__img" />
+              <div class="card__img">
+                <img
+                  src="./src/img/item4-full.png"
+                  alt="photo"
+                  class="card__img_item"
+                />
+              </div>
               <div class="card__rectangle">
                 <div class="card__content">
                   <h4 class="card__title">Planting</h4>
-                  <div class="card__info">Lorem Ipsum has been the industry</div>
+                  <div class="card__info">
+                    Lorem Ipsum has been the industry
+                  </div>
                 </div>
               </div>
             </div>
             <div class="card">
-              <img src="./src/img/item5.png" alt="photo" class="card__img" />
+              <div class="card__img">
+                <img
+                  src="./src/img/item5-full.png"
+                  alt="photo"
+                  class="card__img_item"
+                />
+              </div>
               <div class="card__rectangle">
                 <div class="card__content">
                   <h4 class="card__title">Garden care</h4>
-                  <div class="card__info">Lorem Ipsum has been the industry</div>
+                  <div class="card__info">
+                    Lorem Ipsum has been the industry
+                  </div>
                 </div>
               </div>
             </div>
             <div class="card">
-              <img src="./src/img/item6.png" alt="photo" class="card__img" />
+              <div class="card__img">
+                <img
+                  src="./src/img/item6-full.png"
+                  alt="photo"
+                  class="card__img_item"
+                />
+              </div>
               <div class="card__rectangle">
                 <div class="card__content">
                   <h4 class="card__title">Planting</h4>
-                  <div class="card__info">Lorem Ipsum has been the industry</div>
+                  <div class="card__info">
+                    Lorem Ipsum has been the industry
+                  </div>
                 </div>
               </div>
             </div>
@@ -231,12 +284,8 @@
       </section>
 
       <section class="section-contacts" id="Contacts">
-        <div class="wrapper">
+        <div class="wrapper section-contacts__wrapper">
           <div class="section-contacts-layout">
-            <div class="section-contacts__img">
-              <img src="./src/img/contact_woman1.png" alt="woman image" />
-            </div>
-            <div class="section-contacts__info">
             <h2 class="section-contacts__title">Contact us</h2>
             <div class="dropdown-container section-contacts__dropdown">
               <div class="dropdown-container__info">City</div>
@@ -245,9 +294,7 @@
                 alt="button"
                 class="accordion__btn"
               />
-              
             </div>
-          </div>
           </div>
         </div>
       </section>
