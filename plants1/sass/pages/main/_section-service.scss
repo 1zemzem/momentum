@@ -67,9 +67,19 @@
                 background-color: $color-bg-section;
                 margin-right: 38px;
 
+                &-selected {
+                    background-color: $color-orange;
+                    color: $color-white;
+                    margin-right: 38px;
+                }
+
                 @include media-small {
                     margin-bottom: 10px;
                     margin-right: 10px;
+                    &-selected {
+                        margin-bottom: 10px;
+                    margin-right: 10px;
+                    }
                 }
             }
         }
@@ -97,6 +107,9 @@
     align-items: center;
     margin-bottom: 58px;
     width: 100%;
+    &-blur {
+        filter: blur(2px);
+    }
 
 
     @include media-tablet {
