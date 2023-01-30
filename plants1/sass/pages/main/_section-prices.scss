@@ -94,6 +94,88 @@
             }
         }
     }
+
+    &-paper {
+        display: none;
+
+        &-open {
+            display: flex;
+            flex-direction: column;
+            padding: 16px 40px;
+            width: 250px;
+            background: $color-green-light;
+            border-radius: 20px;
+            margin-bottom: 32px;
+
+            @include media-mobile {
+                width: 180px;
+                height: 49.72px;
+                margin-bottom: 14px;
+                padding: 14px 40px 16px 30px;
+            }
+
+            &_header {
+                display: flex;
+                justify-content: space-between;
+
+                &-title {
+                    @include media-mobile {
+                        font-size: 15px;
+                        line-height: 20px;
+                    }
+                }
+            }
+
+            &_line {
+                width: 164px;
+                height: 0px;
+                left: 392px;
+                top: 263px;
+                border: 0.5px solid #AEA1A1;
+                margin-top: 12px;
+                margin-bottom: 6px;
+            }
+
+            &_text {
+                font-size: 1rem;
+                line-height: 1rem;
+                color: $color-grey;
+                margin-bottom: 6px;
+            }
+
+            &_description {
+                font-size: 1.2rem;
+                line-height: 2rem;
+                color: $color-black;
+                margin-bottom: 12px;
+            }
+
+            &_span {
+                font-weight: 700;
+                font-size: 1.6rem;
+                line-height: 2rem;
+                color: $color-orange;
+            }
+        }
+
+
+
+    }
+}
+
+.button-small {
+    width: 86px;
+    height: 25px;
+    background: $color-white;
+    border: none;
+    border-radius: 10px;
+
+    &_text {
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: $color-grey;
+    }
 }
 
 .context-column {

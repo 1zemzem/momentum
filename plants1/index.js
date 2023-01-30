@@ -11,9 +11,9 @@ const ServiceButtons = document.querySelector(
 const buttons = document.querySelectorAll(
   ".section-service__heading-buttons-item"
 );
-const cards = document.querySelectorAll(".card")
+const cards = document.querySelectorAll(".card");
 
-console.log(cards);
+// console.log(cards);
 
 window.onload = function () {
   addServiceButtonsClickHandler();
@@ -52,7 +52,7 @@ function closeOnClick() {
 
 const addServiceButtonsClickHandler = () => {
   ServiceButtons.addEventListener("click", (e) => {
-    let selectedButton = e.target;  
+    let selectedButton = e.target;
     removeClickedButton();
     selectClickedButton(selectedButton);
     filterByClickedButton(selectedButton.innerText);
@@ -74,19 +74,13 @@ const selectClickedButton = (selectedButton) => {
 };
 
 const filterByClickedButton = (selectedButton) => {
-  
-  cards.forEach(card => {
-      card.classList.add('card-blur');
-           
-      cards.forEach(card => {
-        console.log(selectedButton);
-        // console.log(card.classList.contains(selectClickedButton))
-        
-          if (card.classList.contains(selectedButton)) {
-              card.classList.remove('card-blur');
-              card.classList.add('card')
-              console.log(card)
-          }
-      })
-  })
-}
+  cards.forEach((card) => {
+    card.classList.add("card-blur");
+    cards.forEach((card) => {      
+      if (card.classList.contains(selectedButton)) {
+        card.classList.remove("card-blur");
+        card.classList.add("card");
+      }
+    });
+  });
+};

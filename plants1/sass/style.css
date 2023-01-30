@@ -1015,6 +1015,77 @@ h5 {
     line-height: 20px;
   }
 }
+.prices-column__list-paper {
+  display: none;
+}
+.prices-column__list-paper-open {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 40px;
+  width: 250px;
+  background: #D6E7D2;
+  border-radius: 20px;
+  margin-bottom: 32px;
+}
+@media (max-width: 380px) {
+  .prices-column__list-paper-open {
+    width: 180px;
+    height: 49.72px;
+    margin-bottom: 14px;
+    padding: 14px 40px 16px 30px;
+  }
+}
+.prices-column__list-paper-open_header {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 380px) {
+  .prices-column__list-paper-open_header-title {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+.prices-column__list-paper-open_line {
+  width: 164px;
+  height: 0px;
+  left: 392px;
+  top: 263px;
+  border: 0.5px solid #AEA1A1;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+.prices-column__list-paper-open_text {
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #717171;
+  margin-bottom: 6px;
+}
+.prices-column__list-paper-open_description {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #000000;
+  margin-bottom: 12px;
+}
+.prices-column__list-paper-open_span {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #E06733;
+}
+
+.button-small {
+  width: 86px;
+  height: 25px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+}
+.button-small_text {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #717171;
+}
 
 .context-column {
   display: flex;
