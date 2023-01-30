@@ -101,22 +101,22 @@ h5 {
 
 @font-face {
   font-family: inika;
-  src: url("../../src/fonts/Inika-Regular.ttf");
+  src: url("../src/fonts/Inika-Regular.ttf");
   font-weight: 400;
 }
 @font-face {
   font-family: inika;
-  src: url("../../src/fonts/Inika-Bold.ttf");
+  src: url("../src/fonts/Inika-Bold.ttf");
   font-weight: 700;
 }
 @font-face {
   font-family: inter;
-  src: url("../../src/fonts/Inter-Regular.ttf");
+  src: url("../src/fonts/Inter-Regular.ttf");
   font-weight: 400;
 }
 @font-face {
   font-family: inter;
-  src: url("../../src/fonts/Inter-Bold.ttf");
+  src: url("../src/fonts/Inter-Bold.ttf");
   font-weight: 700;
 }
 .wrapper {
@@ -333,6 +333,7 @@ h5 {
   font-size: 20px;
   line-height: 26px;
   color: #E06733;
+  cursor: pointer;
 }
 @media (max-width: 380px) {
   .button {
@@ -342,10 +343,6 @@ h5 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
-}
-.button:hover {
-  background-color: #E06733;
-  color: #FFFFFF;
 }
 .button-black-text {
   background-color: #EDF2EC;
@@ -359,6 +356,7 @@ h5 {
   font-size: 16px;
   line-height: 20px;
   color: #000000;
+  cursor: pointer;
 }
 @media (max-width: 380px) {
   .button-black-text {
@@ -370,6 +368,10 @@ h5 {
   }
 }
 .button-black-text:hover {
+  background-color: #E06733;
+  color: #FFFFFF;
+}
+.button-black-text-selected {
   background-color: #E06733;
   color: #FFFFFF;
 }
@@ -797,8 +799,17 @@ h5 {
   background-color: #EDF2EC;
   margin-right: 38px;
 }
+.section-service__heading-buttons-item-selected {
+  background-color: #E06733;
+  color: #FFFFFF;
+  margin-right: 38px;
+}
 @media (max-width: 646px) {
   .section-service__heading-buttons-item {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  .section-service__heading-buttons-item-selected {
     margin-bottom: 10px;
     margin-right: 10px;
   }
@@ -839,6 +850,9 @@ h5 {
   align-items: center;
   margin-bottom: 58px;
   width: 100%;
+}
+.card-blur {
+  filter: blur(2px);
 }
 @media (max-width: 768px) {
   .card {
