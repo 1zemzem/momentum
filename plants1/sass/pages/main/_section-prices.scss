@@ -78,6 +78,7 @@
         background: $color-bg-section;
         border-radius: 20px;
         margin-bottom: 32px;
+        cursor: pointer;
 
         @include media-mobile {
             width: 180px;
