@@ -979,7 +979,6 @@ h5 {
   box-sizing: border-box;
   padding: 34px 41px;
   max-width: 332px;
-  max-height: 282px;
   border: 1px solid #E3E1D5;
   border-radius: 20px;
 }
@@ -1008,6 +1007,9 @@ h5 {
     margin-bottom: 14px;
     padding: 14px 40px 16px 30px;
   }
+}
+.prices-column__list-item-hidden {
+  display: none;
 }
 @media (max-width: 380px) {
   .prices-column__list-item_title {
