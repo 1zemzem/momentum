@@ -59,7 +59,6 @@
     box-sizing: border-box;
     padding: 34px 41px;
     max-width: 332px;
-    max-height: 282px;
     border: 1px solid #E3E1D5;
     border-radius: 20px;
 
@@ -79,12 +78,17 @@
         background: $color-bg-section;
         border-radius: 20px;
         margin-bottom: 32px;
+        cursor: pointer;
 
         @include media-mobile {
             width: 180px;
             height: 49.72px;
             margin-bottom: 14px;
             padding: 14px 40px 16px 30px;
+        }
+
+        &-hidden {
+            display: none;
         }
 
         &_title {

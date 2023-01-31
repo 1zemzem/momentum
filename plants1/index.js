@@ -12,8 +12,9 @@ const buttons = document.querySelectorAll(
   ".section-service__heading-buttons-item"
 );
 const cards = document.querySelectorAll(".card");
-
-// console.log(cards);
+const accordion = document.querySelectorAll(".prices-column__list-item");
+const content = document.querySelectorAll(".prices-column__list-paper");
+console.log(content);
 
 window.onload = function () {
   addServiceButtonsClickHandler();
@@ -76,7 +77,7 @@ const selectClickedButton = (selectedButton) => {
 const filterByClickedButton = (selectedButton) => {
   cards.forEach((card) => {
     card.classList.add("card-blur");
-    cards.forEach((card) => {      
+    cards.forEach((card) => {
       if (card.classList.contains(selectedButton)) {
         card.classList.remove("card-blur");
         card.classList.add("card");
@@ -84,3 +85,21 @@ const filterByClickedButton = (selectedButton) => {
     });
   });
 };
+
+accordion.forEach((el) => {
+  el.addEventListener("click", () => {
+    let cont = el.nextElementSibling;
+    console.log(cont);
+    el.classList.add("prices-column__list-item-hidden");
+    cont.classList.add("prices-column__list-paper-open");
+  });
+});
+
+content.forEach((el) => {
+  el.addEventListener("click", () => {
+    el.classList.remove("prices-column__list-paper-open");
+    accordion.forEach((el) => {
+      el.classList.remove("prices-column__list-item-hidden");
+    });
+  });
+});
