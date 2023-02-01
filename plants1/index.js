@@ -14,12 +14,13 @@ const buttons = document.querySelectorAll(
 const cards = document.querySelectorAll(".card");
 const accordion = document.querySelectorAll(".prices-column__list-item");
 const content = document.querySelectorAll(".prices-column__list-paper");
-console.log(content);
+// console.log(content);
 
 window.onload = function () {
   addServiceButtonsClickHandler();
 };
 
+//burger
 burger.addEventListener("click", burgerHandler);
 
 function burgerHandler(e) {
@@ -51,6 +52,7 @@ function closeOnClick() {
   body.classList.remove("noscroll");
 }
 
+//section-service
 const addServiceButtonsClickHandler = () => {
   ServiceButtons.addEventListener("click", (e) => {
     let selectedButton = e.target;
@@ -86,20 +88,24 @@ const filterByClickedButton = (selectedButton) => {
   });
 };
 
+//section-prices
 accordion.forEach((el) => {
   el.addEventListener("click", () => {
-    let cont = el.nextElementSibling;
-    console.log(cont);
+    accordion.forEach((el) => {
+    let contEl = el.nextElementSibling;
+    el.classList.remove("prices-column__list-item-hidden");
+    contEl.classList.remove("prices-column__list-paper-open");;
+    })
+    let contEl = el.nextElementSibling;
     el.classList.add("prices-column__list-item-hidden");
-    cont.classList.add("prices-column__list-paper-open");
+    contEl.classList.add("prices-column__list-paper-open");
   });
 });
 
 content.forEach((el) => {
   el.addEventListener("click", () => {
+    let accEl = el.previousElementSibling;
     el.classList.remove("prices-column__list-paper-open");
-    accordion.forEach((el) => {
-      el.classList.remove("prices-column__list-item-hidden");
-    });
+    accEl.classList.remove("prices-column__list-item-hidden");
   });
 });
