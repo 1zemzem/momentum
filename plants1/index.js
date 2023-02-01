@@ -14,7 +14,11 @@ const buttons = document.querySelectorAll(
 const cards = document.querySelectorAll(".card");
 const accordion = document.querySelectorAll(".prices-column__list-item");
 const content = document.querySelectorAll(".prices-column__list-paper");
-// console.log(content);
+
+const pricesPaperHeader = document.querySelectorAll(
+  ".prices-column__list-paper-open_header"
+);
+console.log(pricesPaperHeader);
 
 window.onload = function () {
   addServiceButtonsClickHandler();
@@ -92,20 +96,23 @@ const filterByClickedButton = (selectedButton) => {
 accordion.forEach((el) => {
   el.addEventListener("click", () => {
     accordion.forEach((el) => {
-    let contEl = el.nextElementSibling;
-    el.classList.remove("prices-column__list-item-hidden");
-    contEl.classList.remove("prices-column__list-paper-open");;
-    })
+      let contEl = el.nextElementSibling;
+      el.classList.remove("prices-column__list-item-hidden");
+      contEl.classList.remove("prices-column__list-paper-open");
+    });
     let contEl = el.nextElementSibling;
     el.classList.add("prices-column__list-item-hidden");
     contEl.classList.add("prices-column__list-paper-open");
   });
 });
 
-content.forEach((el) => {
+pricesPaperHeader.forEach((el) => {
   el.addEventListener("click", () => {
-    let accEl = el.previousElementSibling;
-    el.classList.remove("prices-column__list-paper-open");
-    accEl.classList.remove("prices-column__list-item-hidden");
+    content.forEach((el) => {
+      el.classList.remove("prices-column__list-paper-open");
+    });
+    accordion.forEach((el) => {
+      el.classList.remove("prices-column__list-item-hidden");
+    });
   });
 });
