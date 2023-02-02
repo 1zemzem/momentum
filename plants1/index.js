@@ -18,7 +18,11 @@ const content = document.querySelectorAll(".prices-column__list-paper");
 const pricesPaperHeader = document.querySelectorAll(
   ".prices-column__list-paper-open_header"
 );
-console.log(pricesPaperHeader);
+const selectHeader = document.querySelectorAll(".select__header");
+const selectBody = document.querySelectorAll(".select__body");
+const selectItem = document.querySelectorAll(".select__item");
+
+// console.log(selectBody);
 
 window.onload = function () {
   addServiceButtonsClickHandler();
@@ -77,7 +81,6 @@ const selectClickedButton = (selectedButton) => {
   selectedButton.classList.toggle(
     "section-service__heading-buttons-item-selected"
   );
-  selectedButton.classList.remove("section-service__heading-buttons-item");
 };
 
 const filterByClickedButton = (selectedButton) => {
@@ -116,3 +119,28 @@ pricesPaperHeader.forEach((el) => {
     });
   });
 });
+
+//section-contacts
+selectHeader.forEach((item) => {
+  item.addEventListener("click", selectToggle);
+});
+
+selectItem.forEach((item) => {
+  item.addEventListener("click", selectChoosen);
+});
+
+function selectToggle() {
+  this.parentElement.classList.toggle("select-active");
+  this.nextElementSibling.classList.toggle("select__body-active");
+}
+
+function selectChoosen() {
+  let text = this.innerText,
+  select = this.closest(".select");
+  currentText = select.querySelector(".select__header-title");
+  currentText.innerText = text;
+  select.classList.remove("select-active");
+  selectBody.forEach((el) => {
+    el.classList.remove("select__body-active");
+  });
+}

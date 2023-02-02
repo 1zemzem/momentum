@@ -381,31 +381,63 @@ h5 {
   height: 16px;
 }
 
-.dropdown-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 34px 0 20px;
+.select {
   width: 100%;
   max-width: 450px;
   height: 50px;
   background: #D6E7D2;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  position: relative;
 }
-.dropdown-container__info {
+.select-active {
+  background-color: #C1E698;
+  box-shadow: none;
+  display: block;
+}
+.select__header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 34px 0 20px;
+}
+.select__header-title {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 40px;
+  font-size: 2rem;
+  line-height: 4rem;
   letter-spacing: 0.05em;
   color: #636060;
 }
-.dropdown-container__btn {
-  background: #717171;
+.select__body {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: #DCE9D9;
+  padding: 15px 35px 31px 20px;
 }
-.dropdown-container__btn_arrow {
-  color: #FFFFFF;
+.select__body-active {
+  display: block;
+  background: #DCE9D9;
+  padding: 15px 35px 31px 20px;
+}
+.select__item {
+  cursor: pointer;
+  height: 35px;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  letter-spacing: 0.05em;
+  color: #499A18;
+  border-bottom: 1px solid #D9D9D9;
+  margin-top: 12px;
+}
+.select__item:hover {
+  color: #636060;
+  border-bottom: 1px solid #717171;
 }
 
 .burger {
@@ -606,26 +638,23 @@ h5 {
     line-height: 33px;
   }
 }
-.section-contacts__dropdown {
+.section-contacts__select {
   margin: 89px 0 352px 0;
   width: 450px;
   height: 50px;
 }
 @media (max-width: 768px) {
-  .section-contacts__dropdown {
+  .section-contacts__select {
     margin: 98px 0 498px 0;
   }
 }
 @media (max-width: 646px) {
-  .section-contacts__dropdown {
+  .section-contacts__select {
     margin: 80px 0 256px 0;
     width: 300px;
     height: 50px;
     padding: 0 24px 0 20px;
   }
-}
-.section-contacts__dropdown:hover {
-  background-color: #C1E698;
 }
 
 .section-about {
@@ -853,6 +882,7 @@ h5 {
 }
 .card-blur {
   filter: blur(2px);
+  transition: all 1s ease-out;
 }
 @media (max-width: 768px) {
   .card {
@@ -999,6 +1029,7 @@ h5 {
   background: #EDF2EC;
   border-radius: 20px;
   margin-bottom: 32px;
+  cursor: pointer;
 }
 @media (max-width: 380px) {
   .prices-column__list-item {
@@ -1021,6 +1052,7 @@ h5 {
   display: none;
 }
 .prices-column__list-paper-open {
+  transition: all 1s ease-out;
   display: flex;
   flex-direction: column;
   padding: 16px 40px;
@@ -1040,6 +1072,7 @@ h5 {
 .prices-column__list-paper-open_header {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 @media (max-width: 380px) {
   .prices-column__list-paper-open_header-title {

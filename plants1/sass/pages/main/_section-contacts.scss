@@ -57,7 +57,7 @@
         }
     }
 
-    &__dropdown {
+    &__select {
         margin: 89px 0 352px 0;
         width: 450px;
         height: 50px;
@@ -71,10 +71,6 @@
             width: 300px;
             height: 50px;
             padding: 0 24px 0 20px;
-        }
-
-        &:hover {
-            background-color: #C1E698;
         }
     }
 }
