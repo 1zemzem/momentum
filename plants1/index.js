@@ -14,12 +14,21 @@ const buttons = document.querySelectorAll(
 const cards = document.querySelectorAll(".card");
 const accordion = document.querySelectorAll(".prices-column__list-item");
 const content = document.querySelectorAll(".prices-column__list-paper");
-console.log(content);
+
+const pricesPaperHeader = document.querySelectorAll(
+  ".prices-column__list-paper-open_header"
+);
+const selectHeader = document.querySelectorAll(".select__header");
+const selectBody = document.querySelectorAll(".select__body");
+const selectItem = document.querySelectorAll(".select__item");
+
+// console.log(selectBody);
 
 window.onload = function () {
   addServiceButtonsClickHandler();
 };
 
+//burger
 burger.addEventListener("click", burgerHandler);
 
 function burgerHandler(e) {
@@ -51,6 +60,7 @@ function closeOnClick() {
   body.classList.remove("noscroll");
 }
 
+//section-service
 const addServiceButtonsClickHandler = () => {
   ServiceButtons.addEventListener("click", (e) => {
     let selectedButton = e.target;
@@ -71,7 +81,6 @@ const selectClickedButton = (selectedButton) => {
   selectedButton.classList.toggle(
     "section-service__heading-buttons-item-selected"
   );
-  selectedButton.classList.remove("section-service__heading-buttons-item");
 };
 
 const filterByClickedButton = (selectedButton) => {
@@ -86,20 +95,52 @@ const filterByClickedButton = (selectedButton) => {
   });
 };
 
+//section-prices
 accordion.forEach((el) => {
   el.addEventListener("click", () => {
-    let cont = el.nextElementSibling;
-    console.log(cont);
+    accordion.forEach((el) => {
+      let contEl = el.nextElementSibling;
+      el.classList.remove("prices-column__list-item-hidden");
+      contEl.classList.remove("prices-column__list-paper-open");
+    });
+    let contEl = el.nextElementSibling;
     el.classList.add("prices-column__list-item-hidden");
-    cont.classList.add("prices-column__list-paper-open");
+    contEl.classList.add("prices-column__list-paper-open");
   });
 });
 
-content.forEach((el) => {
+pricesPaperHeader.forEach((el) => {
   el.addEventListener("click", () => {
-    el.classList.remove("prices-column__list-paper-open");
+    content.forEach((el) => {
+      el.classList.remove("prices-column__list-paper-open");
+    });
     accordion.forEach((el) => {
       el.classList.remove("prices-column__list-item-hidden");
     });
   });
 });
+
+//section-contacts
+selectHeader.forEach((item) => {
+  item.addEventListener("click", selectToggle);
+});
+
+selectItem.forEach((item) => {
+  item.addEventListener("click", selectChoosen);
+});
+
+function selectToggle() {
+  this.parentElement.classList.toggle("select-active");
+  this.nextElementSibling.classList.toggle("select__body-active");
+}
+
+function selectChoosen() {
+  let text = this.innerText,
+  select = this.closest(".select");
+  currentText = select.querySelector(".select__header-title");
+  currentText.innerText = text;
+  select.classList.remove("select-active");
+  selectBody.forEach((el) => {
+    el.classList.remove("select__body-active");
+  });
+}
