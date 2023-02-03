@@ -150,6 +150,7 @@ function selectChoosen() {
   currentText = select.querySelector(".select__header-title");
   currentText.innerText = text;
   select.classList.remove("select-active");
+  select.classList.add("select-green")
   selectBody.forEach((el) => {
     el.classList.remove("select__body-active");
   });
