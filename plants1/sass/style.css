@@ -381,6 +381,14 @@ h5 {
   height: 16px;
 }
 
+.callButton {
+  width: 122px;
+  height: 26px;
+  border: 1px solid #E06733;
+  border-radius: 5px;
+  background-color: #EDF2EC;
+}
+
 .select {
   width: 100%;
   max-width: 450px;
@@ -418,7 +426,7 @@ h5 {
   right: 0;
   top: 100%;
   background: #DCE9D9;
-  padding: 15px 35px 31px 20px;
+  padding: 15px 35px 32px 20px;
 }
 .select__body-active {
   display: block;
@@ -438,6 +446,41 @@ h5 {
 .select__item:hover {
   color: #636060;
   border-bottom: 1px solid #717171;
+}
+.select__contacts-info {
+  display: none;
+  padding: 15px 35px 32px 20px;
+  background: #EDF2EC;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 200%;
+}
+.select__contacts-info-active {
+  display: block;
+  padding: 15px 35px 32px 20px;
+  background: #EDF2EC;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 200%;
+}
+.select__contacts-info_layout {
+  display: flex;
+  justify-content: space-around;
+}
+.select__contacts-info_column {
+  font-size: 1.6rem;
+  line-height: 4rem;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+.select__contacts-info_column-gray {
+  color: #717171;
 }
 
 .burger {
@@ -581,13 +624,15 @@ h5 {
 }
 @media (max-width: 768px) {
   .section-contacts {
-    height: auto;
     flex-direction: column;
+    height: auto;
     padding-top: 40px;
   }
 }
 @media (max-width: 380px) {
   .section-contacts {
+    flex-direction: column;
+    height: auto;
     padding-top: 25px;
   }
 }
@@ -602,7 +647,9 @@ h5 {
   .section-contacts__wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    min-height: 739px;
     background-size: 200px auto;
     background-position: left 52% bottom;
   }
@@ -611,6 +658,7 @@ h5 {
   .section-contacts__wrapper {
     background-size: 100px auto;
     background-position: left 50% bottom;
+    min-height: 600px;
   }
 }
 .section-contacts-layout {
@@ -638,13 +686,18 @@ h5 {
     line-height: 33px;
   }
 }
+.section-contacts__column {
+  display: flex;
+  flex-direction: column;
+}
 .section-contacts__select {
   margin: 89px 0 352px 0;
   width: 450px;
   height: 50px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .section-contacts__select {
+    width: 380px;
     margin: 98px 0 498px 0;
   }
 }
