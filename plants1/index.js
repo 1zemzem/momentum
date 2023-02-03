@@ -21,8 +21,9 @@ const pricesPaperHeader = document.querySelectorAll(
 const selectHeader = document.querySelectorAll(".select__header");
 const selectBody = document.querySelectorAll(".select__body");
 const selectItem = document.querySelectorAll(".select__item");
+const selectInfo = document.querySelectorAll(".select__contacts-info");
 
-// console.log(selectBody);
+console.log(selectInfo);
 
 window.onload = function () {
   addServiceButtonsClickHandler();
@@ -122,7 +123,7 @@ pricesPaperHeader.forEach((el) => {
 
 //section-contacts
 selectHeader.forEach((item) => {
-  item.addEventListener("click", selectToggle);
+  item.addEventListener("click", selectToggle);   
 });
 
 selectItem.forEach((item) => {
@@ -132,6 +133,11 @@ selectItem.forEach((item) => {
 function selectToggle() {
   this.parentElement.classList.toggle("select-active");
   this.nextElementSibling.classList.toggle("select__body-active");
+  selectInfo.forEach((el) => { 
+    el.classList.remove("select__contacts-info-active");
+    el.classList.add("select__contacts-info")
+  })
+ 
 }
 
 function selectChoosen() {
@@ -142,5 +148,12 @@ function selectChoosen() {
   select.classList.remove("select-active");
   selectBody.forEach((el) => {
     el.classList.remove("select__body-active");
+  });
+  selectInfo.forEach((el) => {
+    console.log(el.id)
+    if ((el.id == text)) {
+      el.classList.remove("select__contacts-info");
+      el.classList.add("select__contacts-info-active");
+    }
   });
 }
