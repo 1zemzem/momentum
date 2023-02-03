@@ -403,6 +403,10 @@ h5 {
   box-shadow: none;
   display: block;
 }
+.select-green {
+  background-color: #C1E698;
+  box-shadow: none;
+}
 .select__header {
   cursor: pointer;
   display: flex;
