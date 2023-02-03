@@ -65,9 +65,13 @@ function closeOnClick() {
 const addServiceButtonsClickHandler = () => {
   ServiceButtons.addEventListener("click", (e) => {
     let selectedButton = e.target;
-    removeClickedButton();
-    selectClickedButton(selectedButton);
-    filterByClickedButton(selectedButton.innerText);
+    if (
+      selectedButton.classList.contains("section-service__heading-buttons-item")
+    ) {
+      removeClickedButton();
+      selectClickedButton(selectedButton);
+      filterByClickedButton(selectedButton.innerText);
+    }
   });
 };
 
@@ -79,7 +83,8 @@ const removeClickedButton = () => {
 };
 
 const selectClickedButton = (selectedButton) => {
-  selectedButton.classList.toggle(
+  console.log(selectedButton);
+  selectedButton.classList.add(
     "section-service__heading-buttons-item-selected"
   );
 };
@@ -123,7 +128,7 @@ pricesPaperHeader.forEach((el) => {
 
 //section-contacts
 selectHeader.forEach((item) => {
-  item.addEventListener("click", selectToggle);   
+  item.addEventListener("click", selectToggle);
 });
 
 selectItem.forEach((item) => {
@@ -133,16 +138,15 @@ selectItem.forEach((item) => {
 function selectToggle() {
   this.parentElement.classList.toggle("select-active");
   this.nextElementSibling.classList.toggle("select__body-active");
-  selectInfo.forEach((el) => { 
+  selectInfo.forEach((el) => {
     el.classList.remove("select__contacts-info-active");
-    el.classList.add("select__contacts-info")
-  })
- 
+    el.classList.add("select__contacts-info");
+  });
 }
 
 function selectChoosen() {
   let text = this.innerText,
-  select = this.closest(".select");
+    select = this.closest(".select");
   currentText = select.querySelector(".select__header-title");
   currentText.innerText = text;
   select.classList.remove("select-active");
@@ -150,8 +154,8 @@ function selectChoosen() {
     el.classList.remove("select__body-active");
   });
   selectInfo.forEach((el) => {
-    console.log(el.id)
-    if ((el.id == text)) {
+    console.log(el.id);
+    if (el.id == text) {
       el.classList.remove("select__contacts-info");
       el.classList.add("select__contacts-info-active");
     }

@@ -871,29 +871,27 @@ h5 {
 }
 .section-service__heading-buttons {
   display: flex;
+  gap: 38px;
 }
 @media (max-width: 646px) {
   .section-service__heading-buttons {
     flex-wrap: wrap;
+    gap: 10px;
   }
 }
 .section-service__heading-buttons-item {
   background-color: #EDF2EC;
-  margin-right: 38px;
 }
 .section-service__heading-buttons-item-selected {
   background-color: #E06733;
   color: #FFFFFF;
-  margin-right: 38px;
 }
 @media (max-width: 646px) {
   .section-service__heading-buttons-item {
     margin-bottom: 10px;
-    margin-right: 10px;
   }
   .section-service__heading-buttons-item-selected {
     margin-bottom: 10px;
-    margin-right: 10px;
   }
 }
 
