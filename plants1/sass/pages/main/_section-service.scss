@@ -58,11 +58,11 @@
 
         &-buttons {
             display: flex;
-            gap: 38px;
+            gap: 38px;            
 
             @include media-small {
                 flex-wrap: wrap;
-                gap: 10px;
+                gap: 10px;                
             }
 
             &-item {
@@ -71,6 +71,7 @@
                 &-selected {
                     background-color: $color-orange;
                     color: $color-white;
+                    transition: all 1s ease-out;
                 }
 
                 @include media-small {
@@ -106,10 +107,13 @@
     align-items: center;
     margin-bottom: 58px;
     width: 100%;
+    transition: all 0.5s ease-out;
+
+filter:none;
 
     &-blur {
         filter: blur(2px);
-        transition: all 1s ease-out;
+        transition: all 0.5s ease-out;
     }
 
 

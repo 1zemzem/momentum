@@ -664,6 +664,9 @@ h5 {
     background-position: left 50% bottom;
     min-height: 600px;
   }
+  .section-contacts__wrapper-active {
+    background: none;
+  }
 }
 .section-contacts-layout {
   display: flex;
@@ -889,6 +892,7 @@ h5 {
 .section-service__heading-buttons-item-selected {
   background-color: #E06733;
   color: #FFFFFF;
+  transition: all 1s ease-out;
 }
 @media (max-width: 646px) {
   .section-service__heading-buttons-item {
@@ -934,10 +938,12 @@ h5 {
   align-items: center;
   margin-bottom: 58px;
   width: 100%;
+  transition: all 0.5s ease-out;
+  filter: none;
 }
 .card-blur {
   filter: blur(2px);
-  transition: all 1s ease-out;
+  transition: all 0.5s ease-out;
 }
 @media (max-width: 768px) {
   .card {
@@ -1070,8 +1076,6 @@ h5 {
 @media (max-width: 380px) {
   .prices-column__list {
     padding: 29px 22px;
-    width: 224px;
-    height: 235px;
   }
 }
 .prices-column__list-item {
@@ -1119,9 +1123,6 @@ h5 {
 @media (max-width: 380px) {
   .prices-column__list-paper-open {
     width: 180px;
-    height: 49.72px;
-    margin-bottom: 14px;
-    padding: 14px 40px 16px 30px;
   }
 }
 .prices-column__list-paper-open_header {
@@ -1136,7 +1137,8 @@ h5 {
   }
 }
 .prices-column__list-paper-open_line {
-  width: 164px;
+  max-width: 164px;
+  width: 100%;
   height: 0px;
   left: 392px;
   top: 263px;
