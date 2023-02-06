@@ -36,6 +36,9 @@
             background-size: 100px auto;
             background-position: left 50% bottom;
             min-height: 600px;
+            &-active {
+                background: none;
+            }
         }
     }
 
