@@ -1,12 +1,12 @@
 .section-contacts {
     background-color: $color-bg-section;
     padding-top: 60px;
-   
+
 
     @include media-tablet {
         flex-direction: column;
         height: auto;
-        padding-top: 40px;       
+        padding-top: 40px;
     }
 
     @include media-mobile {
@@ -36,6 +36,7 @@
             background-size: 100px auto;
             background-position: left 50% bottom;
             min-height: 600px;
+
             &-active {
                 background: none;
             }
@@ -63,7 +64,7 @@
         @include media-mobile {
             font-size: 25px;
             line-height: 33px;
-        }         
+        }
     }
 
     &__column {
