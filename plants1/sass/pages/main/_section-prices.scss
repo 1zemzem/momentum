@@ -221,6 +221,11 @@
         padding: 12px 30px;
         margin-bottom: 39px;
 
+        &:hover {
+            background-color: $color-orange;
+            color: $color-white;
+        }
+
         @include media-tablet {
             margin-bottom: 34px;
         }

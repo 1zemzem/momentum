@@ -18,7 +18,7 @@ const content = document.querySelectorAll(".prices-column__list-paper");
 const pricesPaperHeader = document.querySelectorAll(
   ".prices-column__list-paper-open_header"
 );
-const selectWrapper = document.querySelector(".section-contacts__wrapper")
+const selectWrapper = document.querySelector(".section-contacts__wrapper");
 const selectHeader = document.querySelectorAll(".select__header");
 const selectBody = document.querySelectorAll(".select__body");
 const selectItem = document.querySelectorAll(".select__item");
@@ -152,7 +152,7 @@ function selectChoosen() {
   currentText.innerText = text;
   select.classList.remove("select-active");
   select.classList.add("select-green");
-  selectWrapper.classList.add("section-contacts__wrapper-active")
+  selectWrapper.classList.add("section-contacts__wrapper-active");
   selectBody.forEach((el) => {
     el.classList.remove("select__body-active");
   });
