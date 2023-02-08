@@ -1222,6 +1222,10 @@ h5 {
   padding: 12px 30px;
   margin-bottom: 39px;
 }
+.context-column__button:hover {
+  background-color: #E06733;
+  color: #FFFFFF;
+}
 @media (max-width: 768px) {
   .context-column__button {
     margin-bottom: 34px;

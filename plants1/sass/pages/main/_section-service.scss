@@ -58,15 +58,15 @@
 
         &-buttons {
             display: flex;
-            gap: 38px;            
+            gap: 38px;
 
             @include media-small {
                 flex-wrap: wrap;
-                gap: 10px;                
+                gap: 10px;
             }
 
             &-item {
-                background-color: $color-bg-section;                
+                background-color: $color-bg-section;
 
                 &-selected {
                     background-color: $color-orange;
@@ -109,7 +109,7 @@
     width: 100%;
     transition: 1s filter linear;
 
-filter:none;
+    filter: none;
 
     &-blur {
         filter: blur(2px);
