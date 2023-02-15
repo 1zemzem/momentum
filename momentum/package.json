@@ -4,9 +4,11 @@
   "description": "",
   "private": true,
   "scripts": {
+    "start": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "webpack --mode development"
+    "build": "webpack --node-env=production",
+    "dev": "webpack --mode development",
+    "clear": "rd /s /q dist"
   },
   "keywords": [],
   "author": "",
@@ -14,15 +16,14 @@
   "devDependencies": {
     "css-loader": "^6.7.3",
     "csv-loader": "^3.0.5",
-    "json5": "^2.2.3",
+    "html-webpack-plugin": "^5.5.0",
     "node-sass": "^8.0.0",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
-    "toml": "^3.0.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
-    "xml-loader": "^1.2.1",
-    "yamljs": "^0.3.0"
+    "webpack-dev-server": "^4.11.1",
+    "xml-loader": "^1.2.1"
   },
   "dependencies": {
     "lodash": "^4.17.21"
