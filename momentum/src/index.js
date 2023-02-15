@@ -1,5 +1,6 @@
-import _ from "lodash";
-import "./scss/style.scss";
+// import _ from "lodash";
+import "./style.scss";
+import "./index.html";
 
 function showTime() {
   const time = document.querySelector(".time");
