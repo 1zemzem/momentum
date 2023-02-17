@@ -9,7 +9,11 @@ const greeting = document.querySelector(".greeting");
 const input = document.querySelector(".name");
 const prevSlider = document.querySelector(".slide-prev");
 const nextSlider = document.querySelector(".slide-next");
-// console.log(nextSlider);
+const quoteText = document.querySelector(".quote");
+const quoteAuthor = document.querySelector(".author");
+const changeQuote = document.querySelector(".change-quote");
+// console.log(changeQuote);
+const quotes = "https://type.fit/api/quotes";
 
 const monthes = [
   "January",
@@ -93,12 +97,17 @@ function getRandomNum() {
     .padStart(2, "0");
   return random;
 }
+
 let bgNum = getRandomNum();
 
 function setBg() {
   const timeOfDay = getTimeOfDay();
-  body.style.backgroundImage = `url("https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg")`;
-  setTimeout(setBg, 2000);
+  const img = new Image();
+  img.src = `https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
+  img.onload = () => {
+    body.style.backgroundImage = `url("https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg")`;
+  };
+  setTimeout(setBg, 500);
 }
 setBg();
 
@@ -124,3 +133,33 @@ function getSlidePrev() {
 
 prevSlider.addEventListener("click", getSlidePrev);
 nextSlider.addEventListener("click", getSlideNext);
+
+function getRandomNumQuota() {
+  const random = Math.ceil(Math.random() * 1000)
+    .toString()
+    .padStart(2, "0");
+  return random;
+}
+
+let quotaNum = getRandomNumQuota();
+
+changeQuote.addEventListener("click", setQuota);
+
+async function getQuotes() {
+  const res = await fetch(quotes);
+  const data = await res.json();
+  console.log(data[quotaNum]?.text);
+  quoteText.innerHTML = data[quotaNum]?.text;
+  quoteAuthor.innerHTML = data[quotaNum]?.author;
+  return data;
+}
+
+function setQuota() {
+  if (quotaNum === quotaNum) {
+    quotaNum = Math.ceil(Math.random() * 1000)
+      .toString()
+      .padStart(2, "0");
+  }
+  getQuotes();
+}
+setQuota();
