@@ -8,24 +8,27 @@
   </head>
   <body class="body">
     <header class="header">
-      <div class="player">
-        <div class="player-controls">
-          <button class="play-prev player-icon"></button>
-          <button class="play player-icon"></button>
-          <button class="play-next player-icon"></button>
+      <!-- <audio src=""> -->
+        <div class="player">
+          <div class="player-controls">
+            <button class="play-prev player-icon"></button>
+            <button class="play player-icon"></button>
+            <button class="play-next player-icon"></button>
+          </div>
+          <ul class="play-list"></ul>
         </div>
-        <ul class="play-list"></ul>
-      </div>
+      <!-- </audio> -->
+      
       <div class="weather">
-        <input type="text" class="city" />
+        <input type="text" class="city" value="Minsk"/>
         <i class="weather-icon owf"></i>
         <div class="weather-error"></div>
         <div class="description-container">
           <span class="temperature"></span>
           <span class="weather-description"></span>
         </div>
-        <div class="wind"></div>
-        <div class="humidity"></div>
+        <div class="wind">wind</div>
+        <div class="humidity">humidity</div>
       </div>
     </header>
     <main class="main">

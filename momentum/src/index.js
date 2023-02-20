@@ -1,6 +1,12 @@
 // import _ from "lodash";
 import "./style.scss";
 import "./index.html";
+import playList from "./js/playList";
+console.log(playList);
+
+const API_KEY = "9cb594847a8332efc8a48a01c59a89de";
+const getCurrentApiUrl = (city) =>
+  `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=9cb594847a8332efc8a48a01c59a89de&units=metric`;
 
 const body = document.querySelector(".body");
 const time = document.querySelector(".time");
@@ -12,7 +18,14 @@ const nextSlider = document.querySelector(".slide-next");
 const quoteText = document.querySelector(".quote");
 const quoteAuthor = document.querySelector(".author");
 const changeQuote = document.querySelector(".change-quote");
-// console.log(changeQuote);
+const temperature = document.querySelector(".temperature");
+const weatherDescription = document.querySelector(".weather-description");
+const wind = document.querySelector(".wind");
+const humidity = document.querySelector(".humidity");
+const weatherIcon = document.querySelector(".weather-icon");
+const cityInput = document.querySelector(".city");
+
+// console.log(cityInput.value);
 const quotes = "https://type.fit/api/quotes";
 
 const monthes = [
@@ -107,7 +120,7 @@ function setBg() {
   img.onload = () => {
     body.style.backgroundImage = `url("https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg")`;
   };
-  setTimeout(setBg, 500);
+  // setTimeout(setBg, 500);
 }
 setBg();
 
@@ -148,7 +161,6 @@ changeQuote.addEventListener("click", setQuota);
 async function getQuotes() {
   const res = await fetch(quotes);
   const data = await res.json();
-  console.log(data[quotaNum]?.text);
   quoteText.innerHTML = data[quotaNum]?.text;
   quoteAuthor.innerHTML = data[quotaNum]?.author;
   return data;
@@ -163,3 +175,18 @@ function setQuota() {
   getQuotes();
 }
 setQuota();
+
+cityInput.addEventListener("change", getWeather);
+
+async function getWeather() {
+  const city = cityInput.value;
+  const res = await fetch(getCurrentApiUrl(city));
+  const data = await res.json();
+  weatherIcon.className = "weather-icon owf";
+  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+  temperature.textContent = `${data.main.temp}°C`;
+  weatherDescription.textContent = `${data.weather[0].description}`;
+  wind.textContent = `wind speed: ${data.wind.speed}`;
+  humidity.textContent = `humidity: ${data.main.humidity}`;
+}
+getWeather();
