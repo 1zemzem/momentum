@@ -8,19 +8,19 @@
   </head>
   <body class="body">
     <header class="header">
-      <!-- <audio src=""> -->
-        <div class="player">
-          <div class="player-controls">
-            <button class="play-prev player-icon"></button>
-            <button class="play player-icon"></button>
-            <button class="play-next player-icon"></button>
-          </div>
-          <ul class="play-list"></ul>
+      <did class="player">
+        <div class="player-controls">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
         </div>
-      <!-- </audio> -->
-      
+        <ul class="play-list">
+          <li class="play-item"></li>
+        </ul>
+      </did>
+
       <div class="weather">
-        <input type="text" class="city" value="Minsk"/>
+        <input type="text" class="city" value="Minsk" />
         <i class="weather-icon owf"></i>
         <div class="weather-error"></div>
         <div class="description-container">
@@ -40,7 +40,7 @@
       <date class="date"></date>
       <div class="greeting-container">
         <span class="greeting"></span>
-        <input type="text" class="name" value="your name"/>
+        <input type="text" class="name" value="human" />
       </div>
     </main>
     <footer class="footer">

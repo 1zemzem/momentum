@@ -2,7 +2,6 @@
 import "./style.scss";
 import "./index.html";
 import playList from "./js/playList";
-console.log(playList);
 
 const API_KEY = "9cb594847a8332efc8a48a01c59a89de";
 const getCurrentApiUrl = (city) =>
@@ -24,8 +23,13 @@ const wind = document.querySelector(".wind");
 const humidity = document.querySelector(".humidity");
 const weatherIcon = document.querySelector(".weather-icon");
 const cityInput = document.querySelector(".city");
+const playBtn = document.querySelector(".play");
+const playNext = document.querySelector(".play-next");
+const playPrev = document.querySelector(".play-prev");
+const playListContainer = document.querySelector(".play-list");
+const playItem = document.querySelector(".play-item")
 
-// console.log(cityInput.value);
+console.log(playListContainer);
 const quotes = "https://type.fit/api/quotes";
 
 const monthes = [
@@ -190,3 +194,49 @@ async function getWeather() {
   humidity.textContent = `humidity: ${data.main.humidity}`;
 }
 getWeather();
+
+let isPlay = false;
+const audio = new Audio();
+let playNum = 0;
+
+function playAudio() {
+  if (!isPlay) {
+    isPlay = true;
+    audio.src = playList[playNum].src;
+    audio.currentTime = 0;
+    playBtn.classList.remove("play")
+    playBtn.classList.add("pause");
+    playItem.innerHTML = playList[playNum].title;
+    audio.play();
+  } else {
+    isPlay = false;
+    playBtn.classList.remove("pause")
+    playBtn.classList.add("play");    
+    audio.pause();
+  }
+}
+
+playBtn.addEventListener("click", playAudio);
+playNext.addEventListener("click", getTrackNext);
+playPrev.addEventListener("click", getTrackPrev);
+
+function getTrackNext() {
+  if (playNum == 3) {
+    playNum = 0;
+  } else {
+    playNum = playNum + 1;
+  }
+  isPlay = false; 
+  playAudio(playNum);
+}
+
+function getTrackPrev() {
+  if (playNum == 0) {
+    playNum = 3;
+  } else {
+    playNum = playNum -1;
+  }
+  isPlay = false;  
+  playAudio(playNum);
+}
+
