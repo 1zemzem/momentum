@@ -195,6 +195,18 @@ async function getWeather() {
 }
 getWeather();
 
+function setLocalStorageCity() {
+  localStorage.setItem("city", cityInput.value);
+}
+window.addEventListener("beforeunload", setLocalStorageCity);
+
+function getLocalStorageCity() {
+  if (localStorage.getItem("city")) {
+    cityInput.value = localStorage.getItem("city");
+  }
+}
+window.addEventListener("load", getLocalStorageCity);
+
 let isPlay = false;
 const audio = new Audio();
 let playNum = 0;
