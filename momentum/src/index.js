@@ -27,9 +27,9 @@ const playBtn = document.querySelector(".play");
 const playNext = document.querySelector(".play-next");
 const playPrev = document.querySelector(".play-prev");
 const playListContainer = document.querySelector(".play-list");
-const playItem = document.querySelector(".play-item")
+const playItem = document.querySelector(".play-item");
 
-console.log(playListContainer);
+// console.log(playListContainer);
 const quotes = "https://type.fit/api/quotes";
 
 const monthes = [
@@ -182,18 +182,22 @@ setQuota();
 
 cityInput.addEventListener("change", getWeather);
 
-async function getWeather() {
+async function getWeather() {  
   const city = cityInput.value;
   const res = await fetch(getCurrentApiUrl(city));
+  if (!res.ok) {
+    throw new Error(cityInput.value ='error');
+    }  
   const data = await res.json();
   weatherIcon.className = "weather-icon owf";
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-  temperature.textContent = `${data.main.temp}°C`;
+  temperature.textContent = `${Math.round(data.main.temp)}°C`;
   weatherDescription.textContent = `${data.weather[0].description}`;
-  wind.textContent = `wind speed: ${data.wind.speed}`;
-  humidity.textContent = `humidity: ${data.main.humidity}`;
+  wind.textContent = `wind speed: ${Math.round(data.wind.speed)} m/s`;
+  humidity.textContent = `humidity: ${data.main.humidity}%`;
 }
 getWeather();
+
 
 function setLocalStorageCity() {
   localStorage.setItem("city", cityInput.value);
@@ -203,6 +207,7 @@ window.addEventListener("beforeunload", setLocalStorageCity);
 function getLocalStorageCity() {
   if (localStorage.getItem("city")) {
     cityInput.value = localStorage.getItem("city");
+    getWeather();
   }
 }
 window.addEventListener("load", getLocalStorageCity);
@@ -216,14 +221,14 @@ function playAudio() {
     isPlay = true;
     audio.src = playList[playNum].src;
     audio.currentTime = 0;
-    playBtn.classList.remove("play")
+    playBtn.classList.remove("play");
     playBtn.classList.add("pause");
     playItem.innerHTML = playList[playNum].title;
     audio.play();
   } else {
     isPlay = false;
-    playBtn.classList.remove("pause")
-    playBtn.classList.add("play");    
+    playBtn.classList.remove("pause");
+    playBtn.classList.add("play");
     audio.pause();
   }
 }
@@ -238,7 +243,7 @@ function getTrackNext() {
   } else {
     playNum = playNum + 1;
   }
-  isPlay = false; 
+  isPlay = false;
   playAudio(playNum);
 }
 
@@ -246,9 +251,8 @@ function getTrackPrev() {
   if (playNum == 0) {
     playNum = 3;
   } else {
-    playNum = playNum -1;
+    playNum = playNum - 1;
   }
-  isPlay = false;  
+  isPlay = false;
   playAudio(playNum);
 }
-
