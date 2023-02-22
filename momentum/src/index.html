@@ -8,7 +8,7 @@
   </head>
   <body class="body">
     <header class="header">
-      <did class="player">
+      <div class="player">
         <div class="player-controls">
           <button class="play-prev player-icon"></button>
           <button class="play player-icon"></button>
@@ -17,7 +17,20 @@
         <ul class="play-list">
           <li class="play-item"></li>
         </ul>
-      </did>
+        <div class="play-time-container">
+          <div class="time-progress"></div>
+          <div class="time-duration"></div>
+        </div>
+        <div class="progress-container">
+          <div class="progress"></div>
+        </div>
+        <div class="volume-container">
+          <div class="volume-sound"></div>
+          <div class="volume-progress-container">
+            <div class="volume-progress"></div>
+          </div>
+        </div>
+      </div>
 
       <div class="weather">
         <input type="text" class="city" value="Minsk" />

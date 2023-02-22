@@ -28,6 +28,13 @@ const playNext = document.querySelector(".play-next");
 const playPrev = document.querySelector(".play-prev");
 const playListContainer = document.querySelector(".play-list");
 const playItem = document.querySelector(".play-item");
+const progressContainer = document.querySelector(".progress-container");
+const progress = document.querySelector(".progress");
+const timeDurationProgress = document.querySelector(".time-progress");
+const timeDuration = document.querySelector(".time-duration");
+const volumeSound = document.querySelector(".volume-sound");
+const volumeSlider = document.querySelector(".volume-progress-container");
+const volumeProgress = document.querySelector(".volume-progress");
 
 // console.log(playListContainer);
 const quotes = "https://type.fit/api/quotes";
@@ -182,12 +189,12 @@ setQuota();
 
 cityInput.addEventListener("change", getWeather);
 
-async function getWeather() {  
+async function getWeather() {
   const city = cityInput.value;
   const res = await fetch(getCurrentApiUrl(city));
   if (!res.ok) {
-    throw new Error(cityInput.value ='error');
-    }  
+    throw new Error((cityInput.value = "error"));
+  }
   const data = await res.json();
   weatherIcon.className = "weather-icon owf";
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
@@ -197,7 +204,6 @@ async function getWeather() {
   humidity.textContent = `humidity: ${data.main.humidity}%`;
 }
 getWeather();
-
 
 function setLocalStorageCity() {
   localStorage.setItem("city", cityInput.value);
@@ -236,6 +242,7 @@ function playAudio() {
 playBtn.addEventListener("click", playAudio);
 playNext.addEventListener("click", getTrackNext);
 playPrev.addEventListener("click", getTrackPrev);
+audio.addEventListener("ended", getTrackNext);
 
 function getTrackNext() {
   if (playNum == 3) {
@@ -256,3 +263,64 @@ function getTrackPrev() {
   isPlay = false;
   playAudio(playNum);
 }
+
+function updateProgress(e) {
+  const currentTimeAudio =
+    Math.round(parseFloat(e.srcElement.currentTime / 60) * 100) / 100;
+  const durationTimeAudio =
+    Math.round(parseFloat(e.srcElement.duration / 60) * 100) / 100;
+  timeDurationProgress.innerHTML = currentTimeAudio;
+  timeDuration.innerHTML = durationTimeAudio;
+  const progressPercent = (currentTimeAudio / durationTimeAudio) * 100;
+  progress.style.width = `${progressPercent}%`;
+}
+audio.addEventListener("timeupdate", updateProgress);
+
+function setProgress(e) {
+  const width = this.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+  audio.currentTime = (clickX / width) * duration;
+}
+
+progressContainer.addEventListener("click", setProgress);
+
+function getSound() {
+  if (!audio.muted) {
+    audio.muted = true;
+    volumeSound.classList.remove("volume-sound");
+    volumeSound.classList.add("volume-mute");
+  } else {
+    audio.muted = false;
+    volumeSound.classList.remove("volume-mute");
+    volumeSound.classList.add("volume-sound");
+  }
+}
+
+volumeSound.addEventListener("click", getSound);
+
+
+// volumeSlider.addEventListener('click', e => {
+//   const sliderWidth = window.getComputedStyle(volumeSlider).width;
+//   const newVolume = e.offsetX / parseInt(sliderWidth);
+//   audio.volume = newVolume;
+//   audioPlayer.querySelector(".controls .volume-percentage").style.width = newVolume * 100 + '%';
+// }, false)
+
+// function setProgressVolume(e) {
+//   const width = this.clientWidth;
+//   const clickX = e.offsetX;
+//   audio.volume = clickX;
+//   audio.currentTime = (clickX / width) * duration;
+// }
+
+// volumeSlider .addEventListener("click", setProgressVolume);
+
+// //click volume slider to change volume
+// const volumeSlide = audioPlayer.querySelector(".controls .volume-slider"); // volumeProgress
+// volumeProgress.addEventListener('click', e => {
+//   const sliderWidth = window.getComputedStyle(volumeProgress).width;
+//   const newVolume = e.offsetX / parseInt(sliderWidth);
+//   audio.volume = newVolume;
+//   volumeProgress.style.width = newVolume * 100 + '%';
+// }, false)
