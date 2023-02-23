@@ -67,10 +67,10 @@ const week = [
 ];
 const dayTime = ["night", "morning", "afternoon", "evening"];
 
-// const greetingTranslation = {
-//   en: ["Good night", "Good morning", "Good afternoon", "Good evening"],
-//   by: ["Дабранач", "Добрай раницы", "Добрага дня", "Добры вечар"],
-// };
+const greetingTranslation = {
+  en: ["Good night", "Good morning", "Good afternoon", "Good evening"],
+  by: ["Дабранач", "Добрай раницы", "Добрага дня", "Добры вечар"],
+};
 
 // get time & show greeting
 function showTime() {
@@ -95,22 +95,21 @@ function getCurrentDate() {
 
 function showGreeting() {
   const timeOfDay = getTimeOfDay();
-  greeting.innerHTML = `Good ${timeOfDay},`;
+  const great = greetingTranslation.en[timeOfDay];
+  greeting.innerHTML = `${great},`;  
 }
 
-function getTimeOfDay() {
-  // let lang = greetingTranslation.en;
-  // console.log(lang);
+function getTimeOfDay() {  
   const date = new Date();
   const hours = date.getHours();
   if (hours >= 0 && hours < 6) {
-    return dayTime[0];
+    return 0;
   } else if (hours >= 6 && hours < 12) {
-    return dayTime[1];
+    return 1;
   } else if (hours >= 12 && hours < 18) {
-    return dayTime[2];
+    return 2;
   } else if (hours >= 18 && hours < 24) {
-    return dayTime[3];
+    return 3;
   }
 }
 
@@ -139,10 +138,11 @@ let bgNum = getRandomNum();
 
 function setBg() {
   const timeOfDay = getTimeOfDay();
+  const imgOfDay = dayTime[timeOfDay];  
   const img = new Image();
-  img.src = `https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
+  img.src = `https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${imgOfDay}/${bgNum}.jpg`;
   img.onload = () => {
-    body.style.backgroundImage = `url("https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg")`;
+    body.style.backgroundImage = `url("https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${imgOfDay}/${bgNum}.jpg")`;
   };
 }
 setBg();
@@ -320,6 +320,8 @@ function setProgressVolume() {
   audio.volume = parseFloat(this.value / 10);
 }
 rangeVolume.addEventListener("change", setProgressVolume);
+
+//settings
 
 function getLinkToImage() {
   fetch(getPhotoApiUrl)
