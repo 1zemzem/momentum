@@ -22,6 +22,21 @@ body {
   transition: background-image 1s ease-in-out;
 }
 
+input[type='range'] {
+  -webkit-appearance: none !important;
+  background: #fff;
+  border-radius: 5px;
+  height:6px;
+
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: #fff;
+  height: 12px;
+  width: 12px;
+  border-radius: 5px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -139,7 +154,7 @@ body {
   .progress {
     background: gray;
     border-radius: 5px;
-    height: 6px;
+    height: 4px;
   }
 }
 
@@ -163,7 +178,7 @@ body {
   .volume-progress {
     background: gray;
     border-radius: 5px;
-    height: 6px;
+    height: 4px;
   }
 }
 
@@ -178,7 +193,6 @@ body {
   width: 30px;
   height: 30px;
 }
-
 
 .weather {
   display: flex;

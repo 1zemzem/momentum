@@ -35,8 +35,9 @@ const timeDuration = document.querySelector(".time-duration");
 const volumeSound = document.querySelector(".volume-sound");
 const volumeSlider = document.querySelector(".volume-progress-container");
 const volumeProgress = document.querySelector(".volume-progress");
+const rangeVolume = document.querySelector(".range-volume");
 
-// console.log(playListContainer);
+// console.log(rangeVolume.value);
 const quotes = "https://type.fit/api/quotes";
 
 const monthes = [
@@ -64,6 +65,11 @@ const week = [
 ];
 const dayTime = ["night", "morning", "afternoon", "evening"];
 
+const greetingTranslation = {
+  en: ["Good night", "Good morning", "Good afternoon", "Good evening"],
+  by: ["Дабранач", "Добрай раницы", "Добрага дня", "Добры вечар"],
+};
+
 function showTime() {
   const date = new Date();
   const currentTime = date.toLocaleTimeString();
@@ -90,6 +96,8 @@ function showGreeting() {
 }
 
 function getTimeOfDay() {
+  let lang = greetingTranslation.en;
+  console.log(lang);
   const date = new Date();
   const hours = date.getHours();
   if (hours >= 0 && hours < 6) {
@@ -299,28 +307,7 @@ function getSound() {
 
 volumeSound.addEventListener("click", getSound);
 
-
-// volumeSlider.addEventListener('click', e => {
-//   const sliderWidth = window.getComputedStyle(volumeSlider).width;
-//   const newVolume = e.offsetX / parseInt(sliderWidth);
-//   audio.volume = newVolume;
-//   audioPlayer.querySelector(".controls .volume-percentage").style.width = newVolume * 100 + '%';
-// }, false)
-
-// function setProgressVolume(e) {
-//   const width = this.clientWidth;
-//   const clickX = e.offsetX;
-//   audio.volume = clickX;
-//   audio.currentTime = (clickX / width) * duration;
-// }
-
-// volumeSlider .addEventListener("click", setProgressVolume);
-
-// //click volume slider to change volume
-// const volumeSlide = audioPlayer.querySelector(".controls .volume-slider"); // volumeProgress
-// volumeProgress.addEventListener('click', e => {
-//   const sliderWidth = window.getComputedStyle(volumeProgress).width;
-//   const newVolume = e.offsetX / parseInt(sliderWidth);
-//   audio.volume = newVolume;
-//   volumeProgress.style.width = newVolume * 100 + '%';
-// }, false)
+function setProgressVolume() {
+  audio.volume = parseFloat(this.value / 10);
+}
+rangeVolume.addEventListener("change", setProgressVolume);
