@@ -6,6 +6,9 @@ import playList from "./js/playList";
 const API_KEY = "9cb594847a8332efc8a48a01c59a89de";
 const getCurrentApiUrl = (city) =>
   `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=9cb594847a8332efc8a48a01c59a89de&units=metric`;
+const UNS_KEY = "MQmOzGBWz70E1F6Gb2LTVg7LZCxCsr5KfvEmkKrxJ0Q";
+const getPhotoApiUrl =
+  "https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=MQmOzGBWz70E1F6Gb2LTVg7LZCxCsr5KfvEmkKrxJ0Q";
 
 const body = document.querySelector(".body");
 const time = document.querySelector(".time");
@@ -33,9 +36,8 @@ const progress = document.querySelector(".progress");
 const timeDurationProgress = document.querySelector(".time-progress");
 const timeDuration = document.querySelector(".time-duration");
 const volumeSound = document.querySelector(".volume-sound");
-const volumeSlider = document.querySelector(".volume-progress-container");
-const volumeProgress = document.querySelector(".volume-progress");
 const rangeVolume = document.querySelector(".range-volume");
+const settingsImg = document.querySelector(".settings-img");
 
 // console.log(rangeVolume.value);
 const quotes = "https://type.fit/api/quotes";
@@ -65,11 +67,12 @@ const week = [
 ];
 const dayTime = ["night", "morning", "afternoon", "evening"];
 
-const greetingTranslation = {
-  en: ["Good night", "Good morning", "Good afternoon", "Good evening"],
-  by: ["Дабранач", "Добрай раницы", "Добрага дня", "Добры вечар"],
-};
+// const greetingTranslation = {
+//   en: ["Good night", "Good morning", "Good afternoon", "Good evening"],
+//   by: ["Дабранач", "Добрай раницы", "Добрага дня", "Добры вечар"],
+// };
 
+// get time & show greeting
 function showTime() {
   const date = new Date();
   const currentTime = date.toLocaleTimeString();
@@ -96,8 +99,8 @@ function showGreeting() {
 }
 
 function getTimeOfDay() {
-  let lang = greetingTranslation.en;
-  console.log(lang);
+  // let lang = greetingTranslation.en;
+  // console.log(lang);
   const date = new Date();
   const hours = date.getHours();
   if (hours >= 0 && hours < 6) {
@@ -123,6 +126,8 @@ function getLocalStorage() {
 }
 window.addEventListener("load", getLocalStorage);
 
+// get & set background images from githubusercontent depend of Time Of Day
+
 function getRandomNum() {
   const random = Math.ceil(Math.random() * 20)
     .toString()
@@ -139,7 +144,6 @@ function setBg() {
   img.onload = () => {
     body.style.backgroundImage = `url("https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg")`;
   };
-  // setTimeout(setBg, 500);
 }
 setBg();
 
@@ -165,6 +169,8 @@ function getSlidePrev() {
 
 prevSlider.addEventListener("click", getSlidePrev);
 nextSlider.addEventListener("click", getSlideNext);
+
+// get & change quotes from api
 
 function getRandomNumQuota() {
   const random = Math.ceil(Math.random() * 1000)
@@ -195,6 +201,7 @@ function setQuota() {
 }
 setQuota();
 
+// get weather forecast from API
 cityInput.addEventListener("change", getWeather);
 
 async function getWeather() {
@@ -226,6 +233,7 @@ function getLocalStorageCity() {
 }
 window.addEventListener("load", getLocalStorageCity);
 
+// Audio player
 let isPlay = false;
 const audio = new Audio();
 let playNum = 0;
@@ -272,6 +280,7 @@ function getTrackPrev() {
   playAudio(playNum);
 }
 
+//Advanced audio player
 function updateProgress(e) {
   const currentTimeAudio =
     Math.round(parseFloat(e.srcElement.currentTime / 60) * 100) / 100;
@@ -311,3 +320,13 @@ function setProgressVolume() {
   audio.volume = parseFloat(this.value / 10);
 }
 rangeVolume.addEventListener("change", setProgressVolume);
+
+function getLinkToImage() {
+  fetch(getPhotoApiUrl)
+    .then((res) => res.json())
+    .then((data) => {
+      return data.urls.regular;
+    });
+}
+
+settingsImg.addEventListener("click", getLinkToImage());
