@@ -6,9 +6,6 @@ import playList from "./js/playList";
 const API_KEY = "9cb594847a8332efc8a48a01c59a89de";
 const getCurrentApiUrl = (city) =>
   `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=9cb594847a8332efc8a48a01c59a89de&units=metric`;
-const UNS_KEY = "MQmOzGBWz70E1F6Gb2LTVg7LZCxCsr5KfvEmkKrxJ0Q";
-const getPhotoApiUrl =
-  "https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=MQmOzGBWz70E1F6Gb2LTVg7LZCxCsr5KfvEmkKrxJ0Q";
 
 const body = document.querySelector(".body");
 const time = document.querySelector(".time");
@@ -38,8 +35,14 @@ const timeDuration = document.querySelector(".time-duration");
 const volumeSound = document.querySelector(".volume-sound");
 const rangeVolume = document.querySelector(".range-volume");
 const settingsImg = document.querySelector(".settings-img");
+const todoButton = document.querySelector(".todo-button");
+const todoContainer = document.querySelector(".todo-container");
+const form = document.querySelector(".todo-header-form");
+const todoheaderInput = document.querySelector(".todo-header-input");
+const list_el = document.querySelector(".task-list");
+const taskInput = document.querySelector(".task-input");
 
-// console.log(rangeVolume.value);
+// console.log(todoContainer);
 const quotes = "https://type.fit/api/quotes";
 
 const monthes = [
@@ -96,10 +99,10 @@ function getCurrentDate() {
 function showGreeting() {
   const timeOfDay = getTimeOfDay();
   const great = greetingTranslation.en[timeOfDay];
-  greeting.innerHTML = `${great},`;  
+  greeting.innerHTML = `${great},`;
 }
 
-function getTimeOfDay() {  
+function getTimeOfDay() {
   const date = new Date();
   const hours = date.getHours();
   if (hours >= 0 && hours < 6) {
@@ -138,7 +141,7 @@ let bgNum = getRandomNum();
 
 function setBg() {
   const timeOfDay = getTimeOfDay();
-  const imgOfDay = dayTime[timeOfDay];  
+  const imgOfDay = dayTime[timeOfDay];
   const img = new Image();
   img.src = `https://raw.githubusercontent.com/1zemzem/stage1-tasks/assets/images/${imgOfDay}/${bgNum}.jpg`;
   img.onload = () => {
@@ -321,14 +324,85 @@ function setProgressVolume() {
 }
 rangeVolume.addEventListener("change", setProgressVolume);
 
-//settings
+//todo 
 
-function getLinkToImage() {
-  fetch(getPhotoApiUrl)
-    .then((res) => res.json())
-    .then((data) => {
-      return data.urls.regular;
-    });
-}
+todoButton.addEventListener("click", () => {
+  if (todoContainer.classList.contains("todo-container-active")) {
+    todoContainer.classList.add("todo-container");
+    todoContainer.classList.remove("todo-container-active");
+  } else {
+    todoContainer.classList.remove("todo-container");
+    todoContainer.classList.add("todo-container-active");
+  }
+});
 
-settingsImg.addEventListener("click", getLinkToImage());
+form.addEventListener('submit', (e) => {
+  e.preventDefault();  
+
+  const task = todoheaderInput.value;
+
+  const task_el = document.createElement('div');
+  task_el.classList.add('task');
+
+  const task_content_el = document.createElement('div');
+  task_content_el.classList.add('task-content');
+
+  task_el.appendChild(task_content_el);
+
+  const task_input_el = document.createElement('input');
+  task_input_el.classList.add('task-input');
+  task_input_el.type = 'text';
+  task_input_el.value = task;
+  task_input_el.setAttribute('readonly', 'readonly');
+
+  task_content_el.appendChild(task_input_el);
+
+  const task_actions_el = document.createElement('div');
+  task_actions_el.classList.add('actions');
+
+  const task_done_el = document.createElement('button');
+  task_done_el.classList.add('done');
+  task_done_el.innerText = 'done';
+
+  const task_edit_el = document.createElement('button');
+  task_edit_el.classList.add('edit');
+  task_edit_el.innerText = 'edit';
+
+  const task_delete_el = document.createElement('button');
+  task_delete_el.classList.add('delete');
+  task_delete_el.innerText = 'del';
+
+  task_actions_el.appendChild(task_done_el);
+  task_actions_el.appendChild(task_edit_el);
+  task_actions_el.appendChild(task_delete_el);
+
+  task_content_el.appendChild(task_actions_el);
+
+  list_el.appendChild(task_el);
+  localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"),
+  { task: task.value, completed: false }]));
+
+  // input.value = '';
+
+  task_edit_el.addEventListener('click', (e) => {
+    if (task_edit_el.innerText.toLowerCase() == "edit") {
+      task_edit_el.innerText = "save";
+      task_input_el.removeAttribute("readonly");
+      task_input_el.focus();
+    } else {
+      task_edit_el.innerText = "edit";
+      task_input_el.setAttribute("readonly", "readonly");
+    }
+  });
+
+  task_delete_el.addEventListener('click', (e) => {
+    list_el.removeChild(task_el);
+  });
+
+  task_done_el.addEventListener('click', (e) => {
+
+    task_input_el.classList.toggle("todo-done");
+  });
+
+});
+
