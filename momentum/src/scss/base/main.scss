@@ -410,20 +410,6 @@ input[type='range']::-webkit-slider-thumb {
   }
 }
 
-.todo-li {
-  display: flex;  
-  justify-content: space-between;
-}
-// .check {
-//   width: 10%;
-// }
-
-
-.completed {
-  color: rgba(192, 192, 192, 0.8);
-  text-decoration: line-through;
-}
-
 .task {
   width: 80%;
 }
