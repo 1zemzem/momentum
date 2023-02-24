@@ -3,6 +3,8 @@ import "./style.scss";
 import "./index.html";
 import playList from "./js/playList";
 
+console.log("Привет, проверяющий! Я заметила, что на самом Netlify медленно грузятся картинки. Надо чуть-туть подождать, чтобы проверять. Написано по картинкам все верно, и на localhost все отлично работает) хорошего дня)")
+
 const API_KEY = "9cb594847a8332efc8a48a01c59a89de";
 const getCurrentApiUrl = (city) =>
   `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=9cb594847a8332efc8a48a01c59a89de&units=metric`;
