@@ -81,8 +81,8 @@ function showTime() {
   const currentTime = date.toLocaleTimeString();
   time.textContent = currentTime;
   setTimeout(showTime, 1000);
-  setTimeout(getCurrentDate, 1000);
-  setTimeout(showGreeting, 1000);
+  getCurrentDate();
+  showGreeting();
 }
 showTime();
 
