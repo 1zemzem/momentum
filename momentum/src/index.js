@@ -1,52 +1,21 @@
-// import _ from "lodash";
 import "./style.scss";
 import "./index.html";
 import playList from "./js/playList";
 import ApiService from "./js/api";
 
-// const API_KEY = "9cb594847a8332efc8a48a01c59a89de";
-// const getCurrentApiUrl = (city, key) =>
-//   `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=${key}&units=metric`;
-
 const body = document.querySelector(".body");
+
+// get time add show greeting
+
 const time = document.querySelector(".time");
 const todayDate = document.querySelector(".date");
 const greeting = document.querySelector(".greeting");
 const input = document.querySelector(".name");
-const prevSlider = document.querySelector(".slide-prev");
-const nextSlider = document.querySelector(".slide-next");
-const quoteText = document.querySelector(".quote");
-const quoteAuthor = document.querySelector(".author");
-const changeQuote = document.querySelector(".change-quote");
-const weatherContainer = document.querySelector(".weather-container");
-const temperature = document.querySelector(".temperature");
-const weatherDescription = document.querySelector(".weather-description");
-const wind = document.querySelector(".wind");
-const humidity = document.querySelector(".humidity");
-const weatherIcon = document.querySelector(".weather-icon");
-const cityInput = document.querySelector(".city");
-const playBtn = document.querySelector(".play");
-const playNext = document.querySelector(".play-next");
-const playPrev = document.querySelector(".play-prev");
-const playListContainer = document.querySelector(".play-list");
-const playItem = document.querySelector(".play-item");
-const progressContainer = document.querySelector(".progress-container");
-const progress = document.querySelector(".progress");
-const timeDurationProgress = document.querySelector(".time-progress");
-const timeDuration = document.querySelector(".time-duration");
-const volumeSound = document.querySelector(".volume-sound");
-const rangeVolume = document.querySelector(".range-volume");
-const settingsImg = document.querySelector(".settings-img");
-const todoButton = document.querySelector(".todo-button");
-const todoContainer = document.querySelector(".todo-container");
-const form = document.querySelector(".todo-header-form");
-const todoheaderInput = document.querySelector(".todo-header-input");
-const list_el = document.querySelector(".task-list");
-const taskInput = document.querySelector(".task-input");
 
-// console.log(todoContainer);
-const quotes = "https://type.fit/api/quotes";
-
+const greetingTranslation = {
+  en: ["Good night", "Good morning", "Good afternoon", "Good evening"],
+  by: ["Дабранач", "Добрай раницы", "Добрага дня", "Добры вечар"],
+};
 const monthes = [
   "January",
   "February",
@@ -70,14 +39,7 @@ const week = [
   "Friday",
   "Saturday",
 ];
-const dayTime = ["night", "morning", "afternoon", "evening"];
 
-const greetingTranslation = {
-  en: ["Good night", "Good morning", "Good afternoon", "Good evening"],
-  by: ["Дабранач", "Добрай раницы", "Добрага дня", "Добры вечар"],
-};
-
-// get time & show greeting
 function showTime() {
   const date = new Date();
   const currentTime = date.toLocaleTimeString();
@@ -132,6 +94,11 @@ window.addEventListener("load", getLocalStorage);
 
 // get & set background images from githubusercontent depend of Time Of Day
 
+const prevSlider = document.querySelector(".slide-prev");
+const nextSlider = document.querySelector(".slide-next");
+
+const dayTime = ["night", "morning", "afternoon", "evening"];
+
 function getRandomNum() {
   const random = Math.ceil(Math.random() * 20)
     .toString()
@@ -177,6 +144,12 @@ nextSlider.addEventListener("click", getSlideNext);
 
 // get & change quotes from api
 
+const quotes = "https://type.fit/api/quotes";
+
+const quoteText = document.querySelector(".quote");
+const quoteAuthor = document.querySelector(".author");
+const changeQuote = document.querySelector(".change-quote");
+
 function getRandomNumQuota() {
   const random = Math.ceil(Math.random() * 1000)
     .toString()
@@ -207,6 +180,15 @@ function setQuota() {
 setQuota();
 
 // get weather forecast from API
+
+const weatherContainer = document.querySelector(".weather-container");
+const temperature = document.querySelector(".temperature");
+const weatherDescription = document.querySelector(".weather-description");
+const wind = document.querySelector(".wind");
+const humidity = document.querySelector(".humidity");
+const weatherIcon = document.querySelector(".weather-icon");
+const cityInput = document.querySelector(".city");
+
 cityInput.addEventListener("change", getWeather);
 
 async function getWeather() {
@@ -220,8 +202,6 @@ async function getWeather() {
     weatherDescription.textContent = `${data.weather[0].description}`;
     wind.textContent = `wind speed: ${Math.round(data.wind.speed)} m/s`;
     humidity.textContent = `humidity: ${data.main.humidity}%`;
-
-    console.log(data);
   } catch (error) {
     cityInput.value = "error, no data";
     weatherContainer.classList.add("weather-container-error");
@@ -243,6 +223,13 @@ function getLocalStorageCity() {
 window.addEventListener("load", getLocalStorageCity);
 
 // Audio player
+
+const playBtn = document.querySelector(".play");
+const playNext = document.querySelector(".play-next");
+const playPrev = document.querySelector(".play-prev");
+// const playListContainer = document.querySelector(".play-list");
+const playItem = document.querySelector(".play-item");
+
 let isPlay = false;
 const audio = new Audio();
 let playNum = 0;
@@ -290,6 +277,14 @@ function getTrackPrev() {
 }
 
 //Advanced audio player
+
+const progressContainer = document.querySelector(".progress-container");
+const progress = document.querySelector(".progress");
+const timeDurationProgress = document.querySelector(".time-progress");
+const timeDuration = document.querySelector(".time-duration");
+const volumeSound = document.querySelector(".volume-sound");
+const rangeVolume = document.querySelector(".range-volume");
+
 function updateProgress(e) {
   const currentTimeAudio =
     Math.round(parseFloat(e.srcElement.currentTime / 60) * 100) / 100;
@@ -331,6 +326,12 @@ function setProgressVolume() {
 rangeVolume.addEventListener("change", setProgressVolume);
 
 //todo
+
+const todoButton = document.querySelector(".todo-button");
+const todoContainer = document.querySelector(".todo-container");
+const form = document.querySelector(".todo-header-form");
+const todoheaderInput = document.querySelector(".todo-header-input");
+const list_el = document.querySelector(".task-list");
 
 todoButton.addEventListener("click", () => {
   if (todoContainer.classList.contains("todo-container-active")) {
