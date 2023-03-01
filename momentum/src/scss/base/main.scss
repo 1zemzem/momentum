@@ -213,16 +213,22 @@ input[type='range']::-webkit-slider-thumb {
 .weather {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: flex-start;
-  row-gap: 5px;
+  // row-gap: 15px;
   width: 180px;
   min-height: 180px;
   text-align: left;
 }
 
-.weather-error {
-  margin-top: -10px;
+.weather-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  &-error {
+    display: none;
+  }
 }
 
 .description-container {

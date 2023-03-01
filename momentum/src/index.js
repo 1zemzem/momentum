@@ -2,12 +2,11 @@
 import "./style.scss";
 import "./index.html";
 import playList from "./js/playList";
+import ApiService from "./js/api";
 
-console.log("Привет, проверяющий! Я заметила, что на самом Netlify медленно грузятся картинки. Надо чуть-туть подождать, чтобы проверять. Написано по картинкам все верно, и на localhost все отлично работает) хорошего дня)")
-
-const API_KEY = "9cb594847a8332efc8a48a01c59a89de";
-const getCurrentApiUrl = (city) =>
-  `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=9cb594847a8332efc8a48a01c59a89de&units=metric`;
+// const API_KEY = "9cb594847a8332efc8a48a01c59a89de";
+// const getCurrentApiUrl = (city, key) =>
+//   `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=${key}&units=metric`;
 
 const body = document.querySelector(".body");
 const time = document.querySelector(".time");
@@ -19,6 +18,7 @@ const nextSlider = document.querySelector(".slide-next");
 const quoteText = document.querySelector(".quote");
 const quoteAuthor = document.querySelector(".author");
 const changeQuote = document.querySelector(".change-quote");
+const weatherContainer = document.querySelector(".weather-container");
 const temperature = document.querySelector(".temperature");
 const weatherDescription = document.querySelector(".weather-description");
 const wind = document.querySelector(".wind");
@@ -210,18 +210,22 @@ setQuota();
 cityInput.addEventListener("change", getWeather);
 
 async function getWeather() {
-  const city = cityInput.value;
-  const res = await fetch(getCurrentApiUrl(city));
-  if (!res.ok) {
-    throw new Error((cityInput.value = "error"));
+  try {
+    const city = cityInput.value;
+    const data = await ApiService.getWeatherInfo(city);
+    weatherContainer.classList.remove("weather-container-error");
+    weatherIcon.className = "weather-icon owf";
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    temperature.textContent = `${Math.round(data.main.temp)}°C`;
+    weatherDescription.textContent = `${data.weather[0].description}`;
+    wind.textContent = `wind speed: ${Math.round(data.wind.speed)} m/s`;
+    humidity.textContent = `humidity: ${data.main.humidity}%`;
+
+    console.log(data);
+  } catch (error) {
+    cityInput.value = "error, no data";
+    weatherContainer.classList.add("weather-container-error");
   }
-  const data = await res.json();
-  weatherIcon.className = "weather-icon owf";
-  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-  temperature.textContent = `${Math.round(data.main.temp)}°C`;
-  weatherDescription.textContent = `${data.weather[0].description}`;
-  wind.textContent = `wind speed: ${Math.round(data.wind.speed)} m/s`;
-  humidity.textContent = `humidity: ${data.main.humidity}%`;
 }
 getWeather();
 
@@ -326,7 +330,7 @@ function setProgressVolume() {
 }
 rangeVolume.addEventListener("change", setProgressVolume);
 
-//todo 
+//todo
 
 todoButton.addEventListener("click", () => {
   if (todoContainer.classList.contains("todo-container-active")) {
@@ -338,41 +342,41 @@ todoButton.addEventListener("click", () => {
   }
 });
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();  
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
   const task = todoheaderInput.value;
 
-  const task_el = document.createElement('div');
-  task_el.classList.add('task');
+  const task_el = document.createElement("div");
+  task_el.classList.add("task");
 
-  const task_content_el = document.createElement('div');
-  task_content_el.classList.add('task-content');
+  const task_content_el = document.createElement("div");
+  task_content_el.classList.add("task-content");
 
   task_el.appendChild(task_content_el);
 
-  const task_input_el = document.createElement('input');
-  task_input_el.classList.add('task-input');
-  task_input_el.type = 'text';
+  const task_input_el = document.createElement("input");
+  task_input_el.classList.add("task-input");
+  task_input_el.type = "text";
   task_input_el.value = task;
-  task_input_el.setAttribute('readonly', 'readonly');
+  task_input_el.setAttribute("readonly", "readonly");
 
   task_content_el.appendChild(task_input_el);
 
-  const task_actions_el = document.createElement('div');
-  task_actions_el.classList.add('actions');
+  const task_actions_el = document.createElement("div");
+  task_actions_el.classList.add("actions");
 
-  const task_done_el = document.createElement('button');
-  task_done_el.classList.add('done');
-  task_done_el.innerText = 'done';
+  const task_done_el = document.createElement("button");
+  task_done_el.classList.add("done");
+  task_done_el.innerText = "done";
 
-  const task_edit_el = document.createElement('button');
-  task_edit_el.classList.add('edit');
-  task_edit_el.innerText = 'edit';
+  const task_edit_el = document.createElement("button");
+  task_edit_el.classList.add("edit");
+  task_edit_el.innerText = "edit";
 
-  const task_delete_el = document.createElement('button');
-  task_delete_el.classList.add('delete');
-  task_delete_el.innerText = 'del';
+  const task_delete_el = document.createElement("button");
+  task_delete_el.classList.add("delete");
+  task_delete_el.innerText = "del";
 
   task_actions_el.appendChild(task_done_el);
   task_actions_el.appendChild(task_edit_el);
@@ -381,12 +385,17 @@ form.addEventListener('submit', (e) => {
   task_content_el.appendChild(task_actions_el);
 
   list_el.appendChild(task_el);
-  localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"),
-  { task: task.value, completed: false }]));
+  localStorage.setItem(
+    "tasks",
+    JSON.stringify([
+      ...JSON.parse(localStorage.getItem("tasks") || "[]"),
+      { task: task.value, completed: false },
+    ])
+  );
 
   // input.value = '';
 
-  task_edit_el.addEventListener('click', (e) => {
+  task_edit_el.addEventListener("click", (e) => {
     if (task_edit_el.innerText.toLowerCase() == "edit") {
       task_edit_el.innerText = "save";
       task_input_el.removeAttribute("readonly");
@@ -397,14 +406,11 @@ form.addEventListener('submit', (e) => {
     }
   });
 
-  task_delete_el.addEventListener('click', (e) => {
+  task_delete_el.addEventListener("click", (e) => {
     list_el.removeChild(task_el);
   });
 
-  task_done_el.addEventListener('click', (e) => {
-
+  task_done_el.addEventListener("click", (e) => {
     task_input_el.classList.toggle("todo-done");
   });
-
 });
-
